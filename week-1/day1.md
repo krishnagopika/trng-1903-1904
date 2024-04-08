@@ -215,6 +215,10 @@ It's important to note that story points and effort estimation are not precise m
 1. <i>Software Engineering: A Practitioner's Approach</i>
 
 
+
+---
+
+
 # Git
 #### Versioning
 
