@@ -33,7 +33,8 @@ Phase 2:
 
 Phase 1:
 ```python
-aragorn = Human("Aragorn", Ranger)
+ranger = Ranger()
+aragorn = Human("Aragorn", ranger)
 gandalf = Human("Gandalf", Wizard)
 smaug = Dragon("Smaug", 2000, 100, fire_breath)
 frodo = Hobbit("Frodo", Warrior)

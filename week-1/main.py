@@ -1,3 +1,3 @@
-from package import multiply
+from package import *
 
-print(multiply.multiply(10,4))
+print(fact.factorial(10,4))
