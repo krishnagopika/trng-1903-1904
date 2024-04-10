@@ -1,4 +1,7 @@
+Lecture Plan
 
+1. File handiling
+2. Python Modules
 
 
 ### File Handiling

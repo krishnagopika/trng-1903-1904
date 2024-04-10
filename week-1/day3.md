@@ -7,8 +7,6 @@
 3. Exception handiling
 4. File handiling
 
-
-
 **Class:** A class to combine the data and functionality together.
 
 **Object:** instance of a class
@@ -76,7 +74,7 @@ ex: `ZeroDivisionError`, `NameError` and `TypeError`
 
 1. if an error occurs in try block the rest of the code in try block is skipped.
 2. a try block should have a corresponding except block or finally block.
-3. if try block contains return, break and continue statements, the finally block is executed just before prior to those statements
+3. if try block contains return, break and continue statements, the finally block is executed just prior to those statements
 4. if finally block contains  return statement then it will not re-raise the exceptions
 </i>
 
@@ -97,10 +95,3 @@ class ClassName(Exception):
     # statements
 
 ```
-
-
-
-
-
-
-
