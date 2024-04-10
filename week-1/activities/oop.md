@@ -18,9 +18,10 @@ Phase 1:
 
 1. An abstract base class called `Character` that defines the common attributes and methods shared by all characters, such as name, race, level, health, and basic combat abilities. set the value of health to 100 when the charcter is initialised as the combact progresses the health will change based on the actions like attack - reduce health by 30, drink-potion increase health by 50.
 2. Derived classes for each race (`Human`, `Elf`, `Dwarf`, `Hobbit`) that inherit from the `Character` class and implement their unique racial traits and abilities (e.g., Elven immortality, Dwarven resilience, Hobbit stealth).
-3. Derived classes for different character classes (`Ranger`, `Wizard`, `Warrior`, `Commoner`, etc.) that inherit from the `Class` class and implement their unique class abilities (e.g., Ranger tracking, Wizard spellcasting, Warrior combat prowess).
-4. An abstract base class called `Creature` that defines the common attributes and methods shared by all mythical creatures and foes, such as creature type, attack power, and special abilities.
-5. Derived classes for different mythical creatures and foes (`Orc`, `Troll`, `Dragon`, `Nazgul`, etc.) that inherit from the `Creature` class and implement their unique abilities and behaviors.
+3. An abstract base class called `CharacterClass` that defines the common attributes and methods shared by all classes.
+4. Derived classes for different character classes (`Ranger`, `Wizard`, `Warrior`, `Commoner`, etc.) that inherit from the `Class` class and implement their unique class abilities (e.g., Ranger tracking, Wizard spellcasting, Warrior combat prowess).
+5. An abstract base class called `Creature` that defines the common attributes and methods shared by all mythical creatures and foes, such as creature type, attack power, and special abilities.
+6. Derived classes for different mythical creatures and foes (`Orc`, `Troll`, `Dragon`, `Nazgul`, etc.) that inherit from the `Creature` class and implement their unique abilities and behaviors.
 
 
 Phase 2:
