@@ -57,7 +57,7 @@ class Name:
 ### Exception handiling
 
 1. Syntax errors - also known as parsing errors.
-2. Exceptions : erros detected during execution
+2. Exceptions : errors detected during execution
 
 ex: `ZeroDivisionError`, `NameError` and `TypeError`
 
@@ -72,6 +72,15 @@ ex: `ZeroDivisionError`, `NameError` and `TypeError`
 - finally
 - else
 
+<i><b>Note</b>
+
+1. if an error occurs in try block the rest of the code in try block is skipped.
+2. a try block should have a corresponding except block or finally block.
+3. if try block contains return, break and continue statements, the finally block is executed just before prior to those statements
+4. if finally block contains  return statement then it will not re-raise the exceptions
+</i>
+
+
 
 #### Raising Exceptions
 
@@ -82,55 +91,6 @@ raise  ExceptionName [, args]
 #### Custom Exceptions
 
 - a class that inherits the Exception class
-
-### File Handiling
-
-
-1. Open
-
-```
-open(filename, [mode], [encoding=None])
-```
-
-- returns a file object
-- default encoding is platform specific
-- utf-8 prefered
-- append b to mode for opening file in binary
-
-**mode**
-
-- `r` : reading (default)
-- `w`: writing and truncating the file first
-- `a`: appending
-- `b`: binary mode
-- `t`: text mode (default)
-- `+`: open for updating (reading and writing)
-- `x` :open for exclusive creation, throws error if the file already exists
-
-
-1. `with` keyword
-
-- closes the file immediaty and frees up the memory
-
-3. read
-
-```python
-f.read()
-f.readline()
-```
-
-4. write
-
-```python
-f.write()
-```
-
-5. position
-
-```
-f.tell()
-```
-
 
 
 

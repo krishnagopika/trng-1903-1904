@@ -148,6 +148,8 @@
   },
   "active": "453db4f7f10ab5c4",
   "lastOpenFiles": [
+    "week-1/day4.md",
+    "week-1/exception_handiling.py",
     "week-1/package/__pycache__/__init__.cpython-311.pyc",
     "week-1/package/__pycache__/multiply.cpython-311.pyc",
     "week-1/package/__pycache__",
@@ -157,8 +159,6 @@
     "week-1/package/fact.py",
     "week-1/package",
     "week-1/__pycache__/fact.cpython-311.pyc",
-    "week-1/__pycache__",
-    "week-1/main.py",
     "week-1/activities/oop.md"
   ]
 }
