@@ -5,13 +5,13 @@ try:
 
 # multile except blocks
 except ZeroDivisionError:
-    print(" ZeroDivisionError Handiled")
+    print(" ZeroDivisionError Handled")
 except NameError:
-    print("NameError Handiled")
+    print("NameError Handled")
 
 # handiling multiple errors in single except block
 except (NameError, ZeroDivisionError):
-    print("Some errors Handiled")
+    print("Some errors Handled")
 
 else:
     print("text is defined")
