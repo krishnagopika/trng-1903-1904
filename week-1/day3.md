@@ -92,6 +92,12 @@ raise  ExceptionName [, args]
 
 - a class that inherits the Exception class
 
+```python
+class ClassName(Exception):
+    # statements
+
+```
+
 
 
 
