@@ -46,8 +46,32 @@ f.readline()
 f.write()
 ```
 
-5. position
+5. tell: current postition represented by no of bytes.
 
 ```
 f.tell()
 ```
+
+6. seek - to move the position to specified offset
+
+```python
+f.seek(offset, whence)
+```
+
+whence:
+
+`0`: begining of the file
+`1`: current file position
+`2`: end of the file
+
+
+#### deleting the files
+
+
+```
+import os
+
+os.remove("path to file")
+```
+
+
