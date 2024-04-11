@@ -102,7 +102,10 @@ os.remove("path to file")
 4. dumps :converts dict to json str
 
 
-3. re - Regexp
+[json](https://docs.python.org/3/tutorial/inputoutput.html#saving-structured-data-with-json)
+
+
+1. re - Regexp
 
 **match:** checks for at the begining of the string
 **search:** checkes anywhere in the string
@@ -125,8 +128,9 @@ os.remove("path to file")
 `?` - 0 or 1 repetitions
 
 
+[re-Regex](https://docs.python.org/3/library/re.html#)
 
-**Unicode version matchs**
+**Unicode string patterns**
 
 
 `\d` - digits `[0-9]`
@@ -139,7 +143,139 @@ os.remove("path to file")
 
 `\w` - alphanumeric `[a-zA-Z0-9]`
 
-`\W` - non - alpha numeric `[^a-zA-Z0-9]`
+`\W` - non alpha numeric `[^a-zA-Z0-9]`
+
+
+[Regex](https://docs.python.org/3/howto/regex.html)
+
+
+`pip` - python package index
+
+
+**virtual env** - used to isolate the package instalations for a specific project
+
+installing virtualenv package
+
+```bash
+pip install virtualenv
+```
+
+creating the venv
+
+```
+python -m venv /path/to/folder [.venv]
+```
+activate venv
+
+```
+.venv\Scripts\activate
+```
+
+
+deactivate venv
+
+
+```
+deactivate
+```
+
+`requirements.txt` - file to list all the packages  needed by your application in order to run correctly.
+
+
+list the packages
+
+```bash
+pip list
+```
+
+```bash
+pip freeze
+```
+
+to install the packages
+
+```bash
+pip install -r requirements.txt
+```
+
+
+1. Logging
+
+
+when it's used
+
+DEBUG - 10
+
+- detailed info for diagnosing the problems
+
+INFO - 20
+
+- program is working as expected
+
+
+WARNING - 30
+
+- indication that something unexpected happened, or indicatin that some problem might occur if not corrected. application still works
+
+ERROR - 40
+
+- a serious problem, the application is not able to perform some functionality
+
+
+CRITICAL - 50
+
+- a serious error, indicats that the program failed.
+
+
+
+[logging](https://docs.python.org/3/library/logging.html#)
+
+1. unittest
+
+
+- class should inherit the unnittest.TestCase
+
+methods
+
+- `assertEquals`
+- `assertNotEquals`
+- `assertTrue`
+- `assertFalse`
+
+
+[unittest](https://docs.python.org/3/library/unittest.html)
+
+
+7. `pylint` : static code analyser - it analyses the code withoit runing it. It checks for code smells, coding standards and errors.
+
+```
+pip install pylint
+```
+
+[pylint](https://pypi.org/project/pylint/)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

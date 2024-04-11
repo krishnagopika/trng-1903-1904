@@ -1,1 +1,1 @@
-__all__ = ["fact"]
+__all__ = ["fact", "multiply"]
