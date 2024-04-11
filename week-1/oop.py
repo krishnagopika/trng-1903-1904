@@ -118,22 +118,3 @@ for i in (s,circle):
     print(i.name)
     # print(i.area())
     print(i.perimeter())
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-

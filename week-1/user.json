@@ -1,0 +1,26 @@
+{
+    "id": 1,
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "address": {
+      "street": "123 Main St",
+      "city": "Anytown",
+      "state": "CA",
+      "zip": "12345"
+    },
+    "phone": "+1 555 123 4567",
+    "dateOfBirth": "1990-05-15",
+    "isActive": true,
+    "preferences": {
+      "darkMode": false,
+      "notificationSettings": {
+        "email": true,
+        "sms": false,
+        "push": true
+      }
+    },
+    "roles": [
+      "user",
+      "admin"
+    ]
+  }
