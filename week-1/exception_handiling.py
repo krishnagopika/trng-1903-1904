@@ -55,4 +55,4 @@ except Exception as e:
     print(e)
 
 # raising inbilt exceptions
-raise ArithmeticError("Arthematic error")
+raise ArithmeticError("Arithemetic error")
