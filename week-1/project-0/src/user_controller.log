@@ -1,8 +1,0 @@
-INFO:main:User data retreived
-INFO:main:User data retreived
-ERROR:main:UserDAO.get_users() takes 1 positional argument but 2 were given
-ERROR:main:UserDAO.get_users() takes 1 positional argument but 2 were given
-ERROR:main:It is required that you pass in a value for the "algorithms" argument when calling decode().
-ERROR:main:Signature verification failed
-ERROR:main:UserDAO.get_users() takes 1 positional argument but 2 were given
-ERROR:main:UserDAO.get_users() takes 1 positional argument but 2 were given
