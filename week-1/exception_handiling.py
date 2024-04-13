@@ -56,3 +56,7 @@ except Exception as e:
 
 # raising inbilt exceptions
 raise ArithmeticError("Arithemetic error")
+
+
+
+
