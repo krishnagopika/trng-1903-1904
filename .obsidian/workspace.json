@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "e64f3da46d10c80b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "day1.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -48,7 +61,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "ile",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -65,7 +78,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -85,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "week-1/day3.md",
+                "file": "day1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +116,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "week-1/day3.md",
+                "file": "day1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "week-1/day3.md"
+                "file": "day1.md"
               }
             }
           }
@@ -146,8 +160,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "453db4f7f10ab5c4",
+  "active": "3d6a1da464f31336",
   "lastOpenFiles": [
+    "week-1/day3.md",
+    "day1.md",
+    "week-2",
     "week-1/SampleText.txt",
     "week-1/sample-text.txt",
     "week-1/file_handiling.py",
@@ -158,8 +175,6 @@
     "week-1/package/__pycache__",
     "week-1/package/__pycache__/fact.cpython-311.pyc",
     "week-1/package/__init__.py",
-    "week-1/package/multiply.py",
-    "week-1/package/fact.py",
     "week-1/activities/oop.md"
   ]
 }
