@@ -77,6 +77,15 @@ wsl --install -d [Distro-name]
 - `su -` : root user
 
 
+`chmod` : modify file permissions
+`chown` : change owner for a file
+`chgrp` : change owing group for a file
+
+```bash
+chgrp/own user/group  file
+```
+
+
 #### file permissions
 
 
@@ -97,21 +106,6 @@ wsl --install -d [Distro-name]
 1. SUID (u+s)
 2. SGID (g+s)
 3. sticky (o+t)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
