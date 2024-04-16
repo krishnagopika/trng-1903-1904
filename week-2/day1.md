@@ -175,7 +175,7 @@ yum erase package-name
 #### Scripting
 
 
-**Script:** a program rgar contains a series of commands
+**Script:** a program that contains a series of commands
 - anything that is typed in cmd can be executed in a script.
 - script is executed by interpretor
 - usefull to automate the tasks
@@ -242,5 +242,3 @@ VARIABLE_NAME=$(command)
 - `-=`
 - `*=`
 - `/=`
-
-
