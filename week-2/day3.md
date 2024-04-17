@@ -51,10 +51,17 @@
 17.  `docker logs  --tail n container-id` : show log files of a container with count n.
 18.  `docker init` : helpfull to build an image with guided procedure.
 
-
 -it : -i +-t
 
 `-i` : keeps SDIN open
 `-t` : makes sure that the text is entered and output text is formated properly.
 
 
+
+VM Isntance
+
+
+1. `sudo yum install -y docker`
+2. `sudo service docker start`
+3. `sudo service docker stop`
+4. `sudo service docker status`
