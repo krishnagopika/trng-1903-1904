@@ -1,5 +1,7 @@
 from fastapi import FastAPI, HTTPException
 import logging
+import os
+import signal
 logging.basicConfig(filename="user_controller.log", encoding='utf-8', filemode='a', level=logging.INFO)
 
 logger=logging.getLogger(__name__)
@@ -23,5 +25,11 @@ def get_users():
 def get_users():
     
     return "welcome to revhire"
+
+@app.get("/kill")
+
+def shutdown():
+    os.kill(os.getpid(), signal.SIGTERM)
+
 
 

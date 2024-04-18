@@ -8,9 +8,9 @@ RUN pip install -r /code/requirements.txt
 
 COPY ./app /code/app
 
-ENV DB_ENDPOINT="path"
-ENV DB_USERNAME="root"
-ENV DB_PASSWORD="1234"
+# ENV DB_ENDPOINT="path"
+# ENV DB_USERNAME="root"
+# ENV DB_PASSWORD="1234"
 
 EXPOSE 80
 

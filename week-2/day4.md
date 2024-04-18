@@ -73,9 +73,96 @@ choco install  minikube
 to start minikube
 
 
-```
+```bash
 minikube start --driver=docker
+
+# or
+
+minikube start --driver=hyperv
+
+# or
+minikube start --driver=virtualbox
 ```
+
+for status:
+
+```bash
+minikube status
+```
+
+dashboard
+
+```
+minikube dashboard
+```
+
+
+**Kubernetes Objects**
+
+1. pod: Kubernetes will start, stop and replece pods as needed. pods are ephemeral
+
+<i><b>Note:</b></i> whenever a container crashes, the container state and all teh files that were created during the lifetime of container are lost. kubectl will restarct the container with a clean state.
+
+2. deployment: used to manage the pods. Internally is a controler object
+
+- set desired target state. which pods and containers whould run and also the no of instances
+- can be paused, deleted and rolled back. 
+
+3. volumes: volumes are used as data stores or pods.
+
+- usefull when a shared filesystem is required.
+
+
+to create a deployment:
+
+```
+kubectl create deployment [name] --image=image-name,image2,image3
+```
+
+list deployments
+
+```
+kubectl get deployments
+```
+
+list pods
+
+```
+kubectl get pods
+```
+
+delete deployment
+
+```
+kubectl delete deployments [name]
+```
+
+1. instructions are sent to control plane (master node)
+2. scheduler analyzes pods that are currently running and finds the best node for new pods.
+3. worker node: kubelet monitors the pods.
+4. pods : one container with the image.
+
+
+- cluster ip is internally  routed through the cluster network.
+- service groups pods together and gves them a shared ip
+- service allows you to access pods externally.
+- without the service communication with pods is difficult internally and impossible to achieve externally.
+
+creating a service:
+```
+kubectl expose deployment [deployment-name] --type=ClusterIp/NodePort/LoadBalancer
+```
+
+list the services
+
+```
+kubectl get services
+```
+
+```
+minikube service [name]
+```
+
 
 
 
