@@ -1,7 +1,7 @@
 function backup_files(){
     BACKUP_DIR="archives"
 
-    echo `-e $BACKUP_DIR`
+    echo $(-e $BACKUP_DIR)
 
     BACKUP_DATE=`date +%Y-%m-%d_%H-%M-%S`
 
