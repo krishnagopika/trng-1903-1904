@@ -2,8 +2,6 @@
 
 1. kubernetes
 
-
-
 ---
 
 **Kubernetes or K8s**
@@ -161,6 +159,13 @@ kubectl get services
 
 ```
 minikube service [name]
+```
+
+
+to scale:
+
+```
+kubectl scale deployment/name --replicas=n
 ```
 
 
