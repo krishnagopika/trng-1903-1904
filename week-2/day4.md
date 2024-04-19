@@ -39,7 +39,7 @@
 
 - API Server: API for the kubelets to communicate
 - Scheduler: watches pods for new pods. It selects worker nodes to run the pods.
-- Kube control manager: watches and controls worker nodes, manages the no of pods.
+- Kube control manager: watches and controls worker nodes, manages the no of pods, jobs and ServiceAccounts for a namespace
 - cloud control manager: KCM for a cloud provider like AWS EKS or Azure  AKS or GCP GKS or kubermatics.
 
 

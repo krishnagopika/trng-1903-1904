@@ -85,7 +85,7 @@ service: auth
 1. **default**: default namespace where all the objects created without explicit namespace name are located.
 2. **kube-public**: any resources in public  namespace is accessible throughout the cluster.
 3. **kube-system**: The namespace for objects created by kubernetes systems.
-4. **kubernetes-node-lease:** holds the lease objects of each node. 
+4. **kubernetes-node-lease:** holds the lease objects of each node. lease allows to detect if the nodes are alive. 
 
 list namespaces
 ```
