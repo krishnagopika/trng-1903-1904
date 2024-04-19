@@ -26,6 +26,15 @@ def get_users():
     
     return "welcome to revhire"
 
+@app.get("/jobs")
+def get_users():
+    
+    return { "jobs": [
+        {"id": 1, "name": "DevOps Eng"},
+        {"id": 2, "name": "Gen AI Eng"},
+    ]
+    }
+
 @app.get("/kill")
 
 def shutdown():

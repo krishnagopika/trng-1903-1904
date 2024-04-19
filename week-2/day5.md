@@ -14,3 +14,38 @@
 **labels**: labels are used select a set of objects
 
 ex: type: dev
+
+
+```
+kubectl apply -f=file.yaml, file2.yaml
+kubectl apply -f=file.yaml -f=file2.yaml
+```
+
+
+#### rollouts
+
+create new rollout:
+
+```
+kubectl set image deployment/[name] container-name=new-images
+```
+
+status
+
+```
+kubectl rollout status deployment/[name]
+```
+
+undo the deployment
+
+```
+kubectl rollout undo deployment/[name] [--to-revision=n]
+```
+
+history
+
+```
+kubectl  rollout history deployment/[name] [--revision=n]
+```
+
+
