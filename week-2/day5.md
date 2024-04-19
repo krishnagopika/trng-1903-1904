@@ -108,7 +108,19 @@ delete namespace
 kubectl delete namespace <namespace>
 ```
 
+#### Network policies
 
+
+- control the traffic at the IP address kevel or port level.
+
+- container to conatiner communications in a pod is done using `localhost`
+- external communication is estblished using service
+- pod-service communication is covered by services
+- pod to pod communications are controlled using Networkpolicies 
+
+
+**Ingress**: incomming requests
+**Egress**: uoutgoing responses
 
 
 
