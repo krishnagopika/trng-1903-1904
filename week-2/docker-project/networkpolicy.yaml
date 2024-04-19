@@ -10,18 +10,18 @@ spec:
   policyTypes:
   - Ingress
   - Egress
-  ingress:
-  - from:
-    - ipBlock:
-        cidr: 0.0.0.0/0
-    ports:
-    - protocol: TCP
-      port: 80
-  egress:
-  - to:
-    - ipBlock:
-        cidr: 0.0.0.0/0
-    ports:
-    - protocol: TCP
-      port: 80
+  # ingress:
+  # - from:
+  #   - ipBlock:
+  #       cidr: 0.0.0.0/0
+  #   ports:
+  #   - protocol: TCP
+  #     port: 80
+  # egress:
+  # - to:
+  #   - ipBlock:
+  #       cidr: 0.0.0.0/0
+  #   ports:
+  #   - protocol: TCP
+  #     port: 80
 
