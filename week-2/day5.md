@@ -115,7 +115,6 @@ kubectl delete namespace <namespace>
 
 - container to conatiner communications in a pod is done using `localhost`
 - external communication is estblished using service
-- pod-service communication is covered by services
 - pod to pod communications are controlled using Networkpolicies 
 
 
