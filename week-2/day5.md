@@ -123,3 +123,19 @@ kubectl delete namespace <namespace>
 
 
 
+**Optional Reading**
+
+**etcd:** it is a key value store.
+
+
+- a service like kubernetes have heavy work loads like managing the nodes, job controll, deployment, load balanding and health monitoring etc.
+- to monitor the state kubernetes needs a data store which is consistent. this data store contains all the information related to cluster, nodes and all the other objects in kubernetes
+
+
+**Lease:** any distributed system needs leases.
+
+- lease provides a mechanism to lock shared resources and coordinate activity between the resources.
+- every node has `kubelet` and the kubelet sends heartbeat to the AI Server in the master node.
+- Every node has a lease object in the kubde-node-lease namespace.
+- every heart beat is a update request to the lease object.
+- a key is attached to lease and every lease has TTL. a lease will expire if the cluster doesnt recieve a heartbeat within the TTL period.

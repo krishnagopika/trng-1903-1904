@@ -179,4 +179,3 @@ kubectl scale deployment/name --replicas=n
 
 
 
-
