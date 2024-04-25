@@ -27,9 +27,15 @@ ex: prometheus
 
 
 1. counter
+
+- rate() function in PromQL calculates how fast a particular count is increasing.
+ 
 2. gauge
 3. histogram
 4. summary
+
+Metric Name: any feature that is being mesaured. ex: request_total, request_latency
+Metric Label: optional paramaters for a metric name.
 
 
 
@@ -74,6 +80,44 @@ pip install prometheus_client
 
 
 **Setting up the prometheus Server**
+
+
+
+
+[kube-prometheus](https://github.com/prometheus-operator/kube-prometheus.git)
+
+1. clone the kube-prometheus
+
+2. config setup files
+
+```
+kubectl create -f ./manifests/setup/
+```
+
+3. configure the manifest files
+
+```
+kubectl create -f ./manifests/
+```
+
+4. create monitoring namespace
+
+```
+kubectl apply -f namespace.yaml
+```
+
+5. config the prometheus
+
+```
+kubectl apply -n monitoring -f prometheus.yaml
+```
+
+6. to list the pods in monitoring namespace
+
+```
+kubectl get pods -n monitoring
+```
+
 
 
 
