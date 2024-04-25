@@ -55,7 +55,6 @@ def get_home():
         start = time.time()
     
         return "welcome to revhire"
-    
     finally:
         graphs['home_counter'].inc()
         graphs['home_histogram'].observe(time.time() - start)
