@@ -8,7 +8,6 @@ ex:
 1. resource usage: CPU, Memory and Disk Space
 2. application: request rate, error rate and request latency
 
-
 Methods:
 
 1. **push:** application should send the metrics to  a particaulr endpoint.
@@ -81,9 +80,6 @@ pip install prometheus_client
 
 **Setting up the prometheus Server**
 
-
-
-
 [kube-prometheus](https://github.com/prometheus-operator/kube-prometheus.git)
 
 1. clone the kube-prometheus
@@ -119,9 +115,29 @@ kubectl get pods -n monitoring
 ```
 
 
+[kube state metrics](https://kubernetes.io/docs/concepts/cluster-administration/kube-state-metrics/)
 
 
 
+Application deployments:
 
 
+1. create the deployment
+
+```
+kubectl  apply -f deployment.yaml
+```
+
+2. create the service
+
+```
+kubectl apply -f service.yaml
+```
+
+3. creating the service-monitor
+
+```
+kubectl apply -f servicemonitor.yaml
+
+```
 
