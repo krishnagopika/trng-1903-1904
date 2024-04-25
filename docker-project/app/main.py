@@ -99,6 +99,7 @@ def shutdown():
 def metrics():
     
     result = []
+    header = {'Content-Type': 'text/plain'}
     for k,v in graphs.items():
-        result.append(prometheus_client.generate_latest(v))
-    return result
+        result.append(prometheus_client.generate_latest(v).decode('utf-8'))
+    return Response(''.join(result), headers=header)
