@@ -25,9 +25,6 @@ ex: An alert that the netire cluster is down is prioratized over other alerts.
 
 ex: http requests per minute > 1000, cluster resource usage alerts like node memory usage goes beyond the threshold
 
-
-
-
 **Alerting properties**
 
 precession: accuracy of the positive predictions.
