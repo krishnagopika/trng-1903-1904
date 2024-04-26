@@ -1,0 +1,30 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  labels:
+    app: demo-app
+  name: revhire-rule
+spec:
+  groups:
+  - name: example-rule
+    rules:
+    - record: total_requests_revhire
+      expr: (users_c_total+home_c_created+jobs_c_total+kill_c_total)
+    - alert: high-traffic-alert
+      annotations:
+        description: user traffic is high
+        summary: user traffic is high on {{ $labels.pod }}
+      expr: |
+        (users_c_total+home_c_created+jobs_c_total+kill_c_total) > 10
+      for: 5s
+      labels:
+        severity: critical
+    - alert: high-traffic-alert-users
+      annotations:
+        description: user traffic is high
+        summary: user traffic is high on {{ $labels.pod }}
+      expr: |
+        (users_counter) > 5s
+      for: 2s
+      labels:
+        severity: warning

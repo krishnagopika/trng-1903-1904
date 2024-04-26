@@ -17,13 +17,15 @@ spec:
   resources:
     requests:
       memory: 400Mi
-  ruleSelector: {}
+  ruleSelector:
+    matchLabels:
+      app: demo-app
   securityContext:
     fsGroup: 2000
     runAsNonRoot: true
     runAsUser: 1000
   serviceAccountName: prometheus-k8s
-  #serviceMonitorNamespaceSelector: {} #match all namespaces
+  serviceMonitorNamespaceSelector: {} #match all namespaces
   serviceMonitorNamespaceSelector:
     matchLabels:
       kubernetes.io/metadata.name: default
