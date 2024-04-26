@@ -51,3 +51,37 @@ time taken to resolve the alert issue. automated actions and workflows in alert 
 - recording rules are used to precompute the frequently needed or compex or computationally expensive expresssions and save their results.
 ex: total http requests, cluster resouce utilization
 
+
+---
+
+
+
+Steps:
+
+1. creating the rules: create prometheus_rules.yaml files. create a PrometheusRule obj.
+
+```
+
+kubectl apply -f prometheus_rules.yaml
+```
+
+2. add ruleSelector configuration to prometheus.yaml file
+
+```yaml
+ruleSelector:
+    matchLabels:
+      app: demo-app
+```
+
+```
+kubectl apply -f prometheus.yaml
+```
+
+3. port forward to the prometheus
+
+```
+kubectl port-forward prometheus-applications-0 -n monitoring 9090
+```
+
+
+
