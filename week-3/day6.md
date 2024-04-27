@@ -43,4 +43,11 @@ kubectl delete pod <grafana-pod> -n monitoring
 kubectl port-forward svc/grafana -n monitoring
 ```
 
+4. test the prometheus datasource
+
+5. daahboards --> datasource (prometehus) --> adding the metrics
+
+
+[loki-promtail official docs](https://grafana.com/docs/loki/latest/get-started/)
+
 
