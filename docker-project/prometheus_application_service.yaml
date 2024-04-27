@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: prometheus-app-service
+  labels:
+    app: demo-app
+spec:
+  selector:
+    name: applications
+  ports:
+    - protocol: 'TCP'
+      port: 9090
+      targetPort: 9090
+  type: NodePort

@@ -81,4 +81,11 @@ kubectl port-forward prometheus-applications-0 -n monitoring 9090
 ```
 
 
+**prometheus operator**
+
+
+**kube prometheus**
+
+
+
 

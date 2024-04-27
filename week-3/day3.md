@@ -72,9 +72,7 @@ Three roles are
 - postmortem is a docuemented record of an incident, its impact, the mitigation process and the root causes of the incident.
 - postmortem is used to prevent incident from recurring.
 
-
 **postmortem triggers**
-
 
 - user visible downtime or not meeting the SLO.
 - Data loss
@@ -103,7 +101,6 @@ Three roles are
 **Lessons learned**
 
 - what went well?, what went bad? and where we got lucky?
-
 
 [postmortem reports](https://sre.google/workbook/postmortem-culture/)
 

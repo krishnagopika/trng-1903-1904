@@ -10,8 +10,6 @@
 - SRE describes the stability & quality of service offered by an application.
 
 
-
-
 #### Service level Indicator
 
 - its a quantitative measure of some aspect of service.

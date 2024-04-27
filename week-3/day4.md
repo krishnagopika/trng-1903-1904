@@ -96,7 +96,7 @@ kubectl create -f ./manifests/setup/
 kubectl create -f ./manifests/
 ```
 
-4. create monitoring namespace
+4. create monitoring namespace - ignore
 
 ```
 kubectl apply -f namespace.yaml
@@ -138,6 +138,12 @@ kubectl apply -f service.yaml
 
 ```
 kubectl apply -f servicemonitor.yaml
-
 ```
+
+
+
+**Prometheus Operator**
+
+
+**Kube Prometheus**
 
