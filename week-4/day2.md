@@ -152,6 +152,41 @@ ex: big data and DWH.
 
 [EBS Volume access](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-using-volumes.html)
 
+
+using EBS volumes
+
+
+1. command to list block storage
+
+```bash
+lsblk
+
+# to get info of the ebs volume
+
+sudo lsblk -f
+```
+
+2. command to create file system - optional (applicable only when the file system is not created for an ebs volume)
+  
+```bash
+sudo mkfs -t xfs /dev/path/to/ebs
+```
+
+3. mount 
+
+```bash
+sudo mount /dev/path/to/ebs /dir
+```
+
+4. un-mount
+
+```bash
+sudo umount /dir 
+
+sudo umount -a
+```
+
+
 #### ssh to ec2
 
 
