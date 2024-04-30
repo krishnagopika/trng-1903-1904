@@ -190,7 +190,7 @@ sudo umount -a
 #### ssh to ec2
 
 
-```
+```bash
 ssh -i /path/to/pem ec2-user@publicip/dns
 ```
 
