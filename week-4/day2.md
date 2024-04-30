@@ -90,7 +90,6 @@ Storage Optimized: High read and write to local staoge.
 
 ex: big data and DWH.
 
-
 **Features:**
 
 1. fixed performce:
@@ -140,6 +139,9 @@ ex: big data and DWH.
   - io2 iops
 
 
+
+[EBS volume types](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html)
+
 - Snapshots : backup for EBS at a particular of time. 
 
   - standard
@@ -147,7 +149,14 @@ ex: big data and DWH.
 
 - EBS benifits include, scalability, backup and recovery, availability, archiving and data protection.
 
+
+
 #### ssh to ec2
+
+
+```
+ssh -i /path/to/pem ec2-user@publicip/dns
+```
 
 #### Security Groups
 
