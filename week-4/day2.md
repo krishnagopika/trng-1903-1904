@@ -92,7 +92,7 @@ ex: big data and DWH.
 
 **Features:**
 
-1. fixed performce:
+1. fixed performce
 2. burstable performance
 
 
@@ -104,7 +104,7 @@ ex: big data and DWH.
 
 - on demand
 - savings plan
-- spot instances:
+- spot instances
 - reserved:
   - on-demand reservations
   - capacity blocks for ML
@@ -187,6 +187,19 @@ sudo umount -a
 ```
 
 
+to add new partitions to a ebs volume
+
+
+```bash
+sudo gdisk /dev/path/to/ebs
+
+
+commands : 
+
+n - to add new partinions
+```
+
+
 #### ssh to ec2
 
 
@@ -201,18 +214,37 @@ ssh -i /path/to/pem ec2-user@publicip/dns
 
 #### ASG
 
-**Auto Scaling:** 
-
-- Auto Scaling Groups
+**Auto Scaling:**  Increase  or decrase in compute based on the requirement
 
 
-### Policy creation
+- Horizantal 
+- Vertical
 
+- Auto Scaling Groups:
+- created from a launch template
+- desired, min and max count for instances
+- ASG policies: 
 
+- target metrics
+
+- cpu unitization
+- network (bytes)
+- Load balancer no of requets
+
+[ASG reference ](https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-groups.html)
+
+[ASG step claning policy](https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html)
 
 
 
 **pricing guide**
+
+[ec2 pricing](https://aws.amazon.com/ec2/pricing/on-demand/)
+[ebs pricing](https://aws.amazon.com/ebs/pricing/)
+
+
+
+**AWS Price calculator**
 
 
 
@@ -224,5 +256,6 @@ ssh -i /path/to/pem ec2-user@publicip/dns
 2. creating the run script with the congiguration to deploy your project.
 3. mounting ebs volume
 4. configuring the security groups for specific ip range, specific ip and port ranges
-5. creating the AMI and creating an instance from the custom AMI
-6. Creating ASG and adding the policies.
+5. creating the AMI and creating an instance from the custom AMI.
+6. create snapshot for ebs volume.
+7. Creating ASG from a launch template and add the policies scaling and maintainace policies.
