@@ -150,6 +150,7 @@ ex: big data and DWH.
 - EBS benifits include, scalability, backup and recovery, availability, archiving and data protection.
 
 
+[EBS Volume access](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-using-volumes.html)
 
 #### ssh to ec2
 
