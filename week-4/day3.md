@@ -10,8 +10,6 @@
 2. Database
    -  RDS
    -  Aurora
-   -  ElastiCache
-
 
 ## Networking
 
@@ -124,55 +122,70 @@ aws ec2 create-security-group --description "desc" --group-name sg-name
 aws ec2 run-instances --image-id ami-id --count 1 --instance-type t2.micro --key-name key-name --security-group-ids sg-id
 ```
 
+**roles**
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- used to provide permissions for aws resources
+- IAM --> roles --> create-role --> select resource(ec2) --> select policies.
+- Assign the role to the ec2
 
 ## Database
 
 ### RDS
 
-### Aurora
+- Relational Database service.
+- Engine Type: MySQL, PostgreSQL, Oracle DB, Microsoft SQL Server, and Maria DB
 
-security
+**RDS Config:**
 
-- KMS
-- In flight
+1. RDS Proxy: Database proxy for connection pooling, query optimization and caching.
+2. Autoscaling: Vertical Auto Scaling with threshold value
+3. Automated Backups: DB snapshots with retention period
+4. Public Access: Yes- accessible ouside the VPC. No- can't be accessed outside the VPC.
+5. RDS is associated with security groups. sgs control the inbound and outbound traffic.
+6. RDS to EC2 connection can be established. RDS (private subnet) -- EC2 (Public Subnet) and Private RDS can be securedly accssed via ec2.
+
+**DB Instance Class**
+
+- memory optimised
+- burtable t series
+
+**Storage**
+
+- gp3
+- gp2
+- iops
+- magnetic
+
+[Intance Types](https://aws.amazon.com/rds/instance-types/)
+
+
+[RDS Pricing](https://aws.amazon.com/rds/pricing/)
+
+
+**security**
+
+- KMS for at rest security
+- In flight encryption
 - Security groups
 - IAM roles
 
-### ElastiCache
+### Aurora
 
-- redis
-- cluster (shards -> node group --> cluster)
-
-
-**Stratergies**
+- commercial MySQL and PostgreSQL databases
+- multi AZ upto 3 AZ with availability of 99.99%
+- Aurora Serverless (ASU's)
 
 
-- Lazy Loading/ Cache aside
-- Write-through
-- TTL
+**Aurora DB Cluster**
 
-CIDR
+- contains one or more DB Instances
 
-role and snapshot usecase
+1. Primary DB instance: support read+write (every cluster has 1 primary db)
+2. Replica - supports read. max 15 replicas.
+
+![Aurora Arch](./images/AuroraArch.png)
+
+
+[Aurora Pricing (serverless, database, replica and backups)](https://aws.amazon.com/rds/aurora/pricing/)
+
+
