@@ -193,7 +193,6 @@ to add new partitions to a ebs volume
 ```bash
 sudo gdisk /dev/path/to/ebs
 
-
 commands : 
 
 n - to add new partinions
@@ -244,7 +243,7 @@ ssh -i /path/to/pem ec2-user@publicip/dns
 
 
 
-**AWS Price calculator**
+**AWS Pricing calculator**
 
 
 
