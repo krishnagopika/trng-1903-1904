@@ -33,7 +33,7 @@
 
 ### NAT Gateway
 
-- Network Address Trasalation gatewat allows instcnaces in private subnect to connect to services outside the VPC. The external services cant connect to the instances.
+- Network Address Transalation gatewat allows instcnaces in private subnect to connect to services outside the VPC. The external services cant connect to the instances.
 
 ### Security Groups
 
@@ -70,7 +70,37 @@ command to copy the ssh file to the ec2 insatnce
 ```bash
 scp -i public-instance-ssh-key.pem  /path/to/private-ec2/ssh-key ec2-user@public-ip:/path/to/copy
 ```
- 
+
+
+**CIDR**
+
+- Classless Inter domain roting
+- Network address
+- Host address
+
+
+example:
+
+- each digit represents 8 bits.
+ex:
+
+10.0.0.0/8
+
+10 - netwrok address
+
+0.0.0 - host address
+
+ex:
+
+10.0.0.0/16
+
+10.0 - netwrok address
+
+0.0 - host address
+
+[CIDR Reference](https://aws.amazon.com/what-is/cidr/)
+
+
 
 
 
