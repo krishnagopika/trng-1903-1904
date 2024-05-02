@@ -100,6 +100,31 @@ ex:
 
 [CIDR Reference](https://aws.amazon.com/what-is/cidr/)
 
+![Networking](./images/networking.png)
+
+
+#### Creating AWS EC2 using CLI
+
+1. Create key pair
+
+```bash
+aws ec2 create-key-pair --key-name key-name --key-type rsa --key-format pem --query "KeyMaterial" --output text > key-name.pem
+```
+
+2. Create security-group
+
+```bash
+
+aws ec2 create-security-group --description "desc" --group-name sg-name
+```
+
+3. Create instance
+
+```bash
+aws ec2 run-instances --image-id ami-id --count 1 --instance-type t2.micro --key-name key-name --security-group-ids sg-id
+```
+
+
 
 
 
