@@ -17,7 +17,7 @@ class User(Base):
 load_dotenv()
 
 
-engine = db.create_engine(url=f"mysql+psycopg2://{os.getenv('USER_NAME')}:{os.getenv('PASSWORD')}@{os.getenv('DB_URL')}:{os.getenv('DB_PORT')}/{os.getenv('DB_NAME')}" )
+engine = db.create_engine(url=f"mysql+pymysql://{os.getenv('USER_NAME')}:{os.getenv('PASSWORD')}@{os.getenv('DB_URL')}:{os.getenv('DB_PORT')}/{os.getenv('DB_NAME')}" )
 
 cache = Redis(host=os.getenv('REDIS_DB_URL'), port=6379, db=0)
 
