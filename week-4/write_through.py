@@ -27,7 +27,7 @@ Session = sessionmaker(bind=engine)
 
 session = Session()
 
-user = User(id=1, name="john", email="sample@email.com", password="1234")
+user = User(id=1, name="john", email="sample@email.com", password="1234", role="employer")
 
 def write_through():
     try:
