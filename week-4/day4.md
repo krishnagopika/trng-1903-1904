@@ -24,7 +24,12 @@
 - Write-through
 - TTL
 
+![lazy loading](./images/lazy-loading.png)
 
+**Write through**
+
+
+![write through](./images/writethrough.png)
 
 
 requirements
@@ -36,7 +41,7 @@ ec2:
 
 sudo yum install -y python3-pip
 
-pip install sqlalchemy python-dotenv redis
+pip install sqlalchemy python-dotenv redis pymysql
 ```
 
 
