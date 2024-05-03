@@ -26,7 +26,13 @@
 
 requirements
 
+ec2:
+
+
 ```bash
+
+sudo yum install -y python3-pip
+
 pip install sqlalchemy python-dotenv redis
 ```
 
