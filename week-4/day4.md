@@ -28,7 +28,6 @@
 
 **Write through**
 
-
 ![write through](./images/writethrough.png)
 
 
@@ -60,9 +59,6 @@ pip install sqlalchemy python-dotenv redis pymysql
 
 
 **Static Web Hosting**
-
-
-**CORS**
 
 
 
