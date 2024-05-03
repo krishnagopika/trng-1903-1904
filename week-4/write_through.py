@@ -32,7 +32,7 @@ user = User(id=1, name="john", email="sample@email.com", password="1234", role="
 def write_through():
     try:
         session.add(user)
-
+        session.commit()
         cache.set("user_id", user.id)
 
     except Exception as e:
