@@ -135,6 +135,13 @@ Objects:
 
 - enable the static webhosting in properties and add the index.html file
 
+
+Steps:
+
+1. upload the files
+2. properties --> enable static web hosting --> index.html
+3. access the url
+
 #### Versioning
 
 - you can version your files in AWS S3
