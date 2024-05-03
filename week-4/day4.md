@@ -24,6 +24,12 @@
 - Write-through
 - TTL
 
+requirements
+
+```bash
+pip install sqlalchemy python-dotenv redis
+```
+
 
 [ElastiCache pricing](https://aws.amazon.com/elasticache/pricing/)
 
