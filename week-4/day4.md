@@ -108,6 +108,10 @@ Objects:
 - Encryption :encrypt objects in AWS S3 using encryption keys
 
 
+
+**[S3 staorage classes](https://aws.amazon.com/s3/storage-classes/)**
+
+
 #### S3 bukcet policies:
 
 - Json based policies:
@@ -124,7 +128,7 @@ Objects:
 - Used to avoid data leaks
 - Can be set at te account level
 
-## Static Web Hosting
+#### Static Web Hosting
 
 - S3 can host static websites and have them accessible on the internet
 - The website url will be based on the url (http://bucket-name.s3-website.aws-region.amazomaws.com or  http://bucket-name.s3-website-aws-region.amazomaws.com)
@@ -141,6 +145,41 @@ Objects:
 Note: Any file that is not versioned prior to enabling will have version null
 
 
+
+Creating bucket
+
+1. S3 --> create --> bucket name and other info. (disable block public access, optional (versioning))
+2. bucket --> upload objects --> select the object --> upload
+3. accessing the obj with obj url is denied as the bucket policy is not configured.
+4. object --> open will allow you to access the object.
+
+Creating the buckt policy
+
+1. bucket --> permissions --> bucket policy --> policy generator --> generate policy for s3
+
+
+**Sample policy to get all objects in a bucket**
+
+```json
+{
+    "Version": "2012-10-17",
+    "Id": "Policy1714716562223",
+    "Statement": [
+        {
+            "Sid": "Stmt1714716560539",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::bucket-name/*"
+        }
+    ]
+}
+
+```
+
+
+<i><b>Note:</b>Block public access takes precedence over the bucket policy.
+</i>
 
 ### Cloud Front
 
