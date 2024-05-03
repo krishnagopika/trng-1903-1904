@@ -11,6 +11,8 @@
    -  RDS
    -  Aurora
 
+---
+
 ## Networking
 
 ### VPC
@@ -187,5 +189,3 @@ aws ec2 run-instances --image-id ami-id --count 1 --instance-type t2.micro --key
 
 
 [Aurora Pricing (serverless, database, replica and backups)](https://aws.amazon.com/rds/aurora/pricing/)
-
-

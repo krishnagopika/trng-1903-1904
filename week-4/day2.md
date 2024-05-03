@@ -6,7 +6,6 @@
   - EC2
   - AMI
   - EBS
-  - EFS
   - Security Groups
   - ASG
 ---
@@ -243,9 +242,7 @@ ssh -i /path/to/pem ec2-user@publicip/dns
 
 
 
-**AWS Pricing calculator**
-
-
+[AWS Pricing Calculator](https://calculator.aws/)
 
 ---
 
