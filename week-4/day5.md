@@ -222,6 +222,22 @@ systemctl enable httpd
 echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
 ```
 
+Steps:
+
+1. Create Ec2 instance
+2. configure AMI AL2, user data and configure sg to allow all http traffic
+
+Create a LoadBalancer
+
+1. Load balancer
+2. ALB 
+3. Create a security group. Allow HTTP from all ipv4 in inbound rules
+4. add that sg to ALB
+5. Create a traget group with HTTP port 80, select the instances
+6. add the target group to the ALB
+7. Create the load balancer
+8. use the dns for ALB to access the instances
+9. edit the sg of instances to all HTTP for sg-loadbalancer.
 
 ![ALB](./images/ALB.png)
 
@@ -248,7 +264,7 @@ echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
 #### Sticky sessions
 
 
-
+- 
 
 #### Cross Zone load balancing
 
