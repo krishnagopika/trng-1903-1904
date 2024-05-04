@@ -161,16 +161,6 @@ trusted key groups
 
 ### Load Balancer
 
-**Scalability:**
-
-- The increase in compute, storage, networking based on the traffic to applications.
-
-**Availability:**
-
-- 
-
-**Load Balancing:**
-
 
 #### ELB
 
@@ -264,9 +254,15 @@ Create a LoadBalancer
 #### Sticky sessions
 
 
-- 
+- To configure the traffic to a specific target group for a specific duration rangine from 1s to 7 days sticky sessions are used.
+- edit the listerner and enable the stickness
 
 #### Cross Zone load balancing
+
+- is used to evenly distribute the traffic among all the instances in all the tagret groups deployed in different availability zones.
+- For ALB its enabeled by default
+- for NLB its disabeled by default
+- for GLB its diabeled by default
 
 
 
@@ -301,3 +297,7 @@ Create a LoadBalancer
 **Other**
 
 1. Deploy a spring-boot application in EC2 and create an ALB and deploy frontend in S3 and create a distribution in Cloud Front.
+
+```
+docker pull krishnagopika4/revhire:latest
+```
