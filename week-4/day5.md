@@ -42,8 +42,6 @@ GET request portion: /index.html
 - the goal is to maximize the cache hit and reduce the requests to origin
 - CacheInvalidation API is used to invalidate the part of the cache.
 
-
-
 **Cache Policies**
 
 - Cache Based on:
@@ -75,13 +73,19 @@ origin policy:
 - Query Strings: ref
 
 
-- Can be set while creating the distribution
+<b><i>Note</b>
+
+1. cache policies are created to manage how the content is cached.
+2. Origin policies are created to control which data is sent to the origin when a cache miss occurs.
+
+</i>
 
 #### Caching Invalidations & Behavior
 
 **Invalidate**
 
 - The cache will be refreshed when after the TTL has expired.
+- by default the TTL is 1 day.
 - A partial or full cache refresh can be performed using CloudFront Invalidation
 
 Distribution --> Invalidations --> create --> add path for files.
@@ -159,9 +163,13 @@ trusted key groups
 
 **Scalability:**
 
-**Availability**
+- The increase in compute, storage, networking based on the traffic to applications.
 
-**Load Balancing**
+**Availability:**
+
+- 
+
+**Load Balancing:**
 
 
 #### ELB
@@ -199,18 +207,81 @@ trusted key groups
 - true ip is hidden in header X-Forwarded-For, port as X-Forwarded-Port an protocol as X-Forwarded-Proto
 
 
+
+**user data**
+
+
+```bash
+#!/bin/bash
+# Use this for your user data (script from top to bottom)
+# install httpd (Linux 2 version)
+yum update -y
+yum install -y httpd
+systemctl start httpd
+systemctl enable httpd
+echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
+```
+
+
+![ALB](./images/ALB.png)
+
 #### Network Load Balancer
 
+- Layer 4
+- Forward UDP and TCP traffic to insatnces
+- andle millions of requests with low latency (100ms). for ALB its 400 ms
+- static ip per AZ and supports elastic ip
+- used for high performce TCP and UDP traffic.
+- Not included in free tier
+
+![NLB](./images/NLB.png)
 
 #### Gateway Load Balancer
 
+- Operates in layer 3 (Network Layer). Listens to IP packets across all ports and forwards the traffic to the target group.
+- It combines transparent network gateway(single entry point and exit point for all traffic) and distributes traffic based on demand.
+- The Gateway Load Balancer and its registered virtual appliance instances exchange application traffic using the GENEVE (Generic Network Virtualization Encapsulation) protocol on port 6081.
+- Suitable for hybrid cloud archictecture. (AWS and on premis resources) and for routing traffic across different aws regions and on premis environments.
+
+[Loadbalancer pricing](https://aws.amazon.com/elasticloadbalancing/pricing/)
 
 #### Sticky sessions
+
+
 
 
 #### Cross Zone load balancing
 
 
-#### SSL/TCL & SNI
 
 
+#### SSL/TLS & SNI
+
+
+- Secure Socket layer allows traffic between your clients and your application to be encryotedin transit(in flight).
+- Transport Layer Security, newer version.
+- TLS Certificates are mainly used, but are still refered as SSL.
+- Public SSL Certificates are issues by Certificate Authorities (CA)
+- ACM (AWS Certificate Manager is used to manage the SSL Certificates)
+- SNI (Server Name Indication) to specify the hostnames for multiple SSL Certificates.
+- Client should Specify the hostname during the initial SSL handshake. 
+
+
+
+#### Activities
+
+**CloudFront**
+
+1. Create a CloudFront OAC dist for S3
+2. Create Invalidations
+3. Configure the Geo restrictions
+
+**Elastic Load Balancer**
+
+1. Create ALB for an Ec2 target group
+2. Configure the SG to route the traffic to ec2 rivately using the ALB
+3. Create Sticky Sessions
+
+**Other**
+
+1. Deploy a spring-boot application in EC2 and create an ALB and deploy frontend in S3 and create a distribution in Cloud Front.
