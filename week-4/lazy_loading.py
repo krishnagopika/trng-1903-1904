@@ -33,5 +33,6 @@ def lazy_loading():
         user_id = session.query(User).filter_by(email='sample@email.com').first()
 
         cache.set("user_id", user_id)
+        cache.expire()
 lazy_loading()
 print(cache.get("user_id"))
