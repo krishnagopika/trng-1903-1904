@@ -15,7 +15,7 @@
 
 
 **Public Cloud**
-- Cloud resources and services are hosted and managed by a third-party cloud provider (e.g., Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform).
+- Cloud resources and services are hosted and managed by a third-party cloud provider (ex: Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform).
 - Users access these resources over the internet on a pay-as-you-go or subscription basis.
 
 **Private Cloud**
