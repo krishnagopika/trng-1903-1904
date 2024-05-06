@@ -221,7 +221,6 @@ Some common HTTP headers include:
 
 HTTP cookies, often referred to as web cookies or browser cookies, are small pieces of data stored on a client's computer by a web server. Cookies are primarily used to track and maintain stateful information across multiple requests and sessions.
 
-
 Cookies can be used for various purposes, including **session management**, **user authentication**, **personalization**, and **tracking user behavior**. They can store information such as user **preferences**, **login credentials**, **shopping cart items**, and more.
 
 ## HTTP Lifecycle:

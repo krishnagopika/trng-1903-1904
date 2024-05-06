@@ -265,8 +265,6 @@ Create a LoadBalancer
 - for GLB its diabeled by default
 
 
-
-
 #### SSL/TLS & SNI
 
 
@@ -277,8 +275,6 @@ Create a LoadBalancer
 - ACM (AWS Certificate Manager is used to manage the SSL Certificates)
 - SNI (Server Name Indication) to specify the hostnames for multiple SSL Certificates.
 - Client should Specify the hostname during the initial SSL handshake. 
-
-
 
 #### Activities
 
