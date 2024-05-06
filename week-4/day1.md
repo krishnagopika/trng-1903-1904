@@ -6,6 +6,7 @@
 
 ### Cloud Computing
 
+**Service Types**
 - IaaS
 - PaaS 
 - SaaS 
