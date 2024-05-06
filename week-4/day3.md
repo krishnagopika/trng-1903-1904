@@ -189,3 +189,11 @@ aws ec2 run-instances --image-id ami-id --count 1 --instance-type t2.micro --key
 
 
 [Aurora Pricing (serverless, database, replica and backups)](https://aws.amazon.com/rds/aurora/pricing/)
+
+
+
+**Activities:**
+
+1. Creating a VPC, public and private subnet, an internet gateway for vpc, and Nat gateway. Create two EC2 instances one in public SN and other in private SN. SSH into the EC2 instances.
+2. Create an RDS with public access enabeled. 
+3. Create a private RDS and access it via EC2. 

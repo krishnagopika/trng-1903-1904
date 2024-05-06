@@ -187,3 +187,8 @@ Creating the buckt policy
 <i><b>Note:</b>Block public access takes precedence over the bucket policy.
 </i>
 
+**Activities:**
+
+1. Implement the Lazy loading and Write through caching stratergies using the ElastiCache and RDS.
+2. Create S3 bucket and deploy a frontend application by enabling static web hosting and create custom bucket policies.
+
