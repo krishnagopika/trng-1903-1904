@@ -72,6 +72,18 @@ python .\aws-elastic-beanstalk-cli-setup\scripts\ebcli_installer.py
 ```
 
 
+
+**Steps**
+
+1. navigate to project dir
+2. eb init
+3. eb create to create env (select pre existing application or create one if not available)
+   - an .ebextensions dir is created with a config file
+   - a new env will be created and the application will be deployed.
+4. if any conif are made execute `eb deploy`
+5. `eb terminate` to delete the env.
+
+
 ### Deployment & Deployment modes
 
 1. All at once
@@ -79,6 +91,8 @@ python .\aws-elastic-beanstalk-cli-setup\scripts\ebcli_installer.py
    - Fastest deployment
    - has downtime
    - no additional cost
+
+
 
 2. Rolling
    - applications are updated based on the bucket size.
@@ -94,7 +108,7 @@ python .\aws-elastic-beanstalk-cli-setup\scripts\ebcli_installer.py
    - New code is deployed in new ASG
    - High cost
    - quick rollback 
-5. Blue Gren
+5. Blue Green
    - new enviorment with new deployment. Route53 to redirect the traffic.
    - not a feature in Elastic Beanstack
 6. Traffic Splitting (canary)
@@ -141,4 +155,4 @@ python .\aws-elastic-beanstalk-cli-setup\scripts\ebcli_installer.py
 
 **Activities:**
 
-1. Deploy a springboot app  using eb console or cli.
+1. Deploy a springboot app using eb console or cli.
