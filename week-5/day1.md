@@ -39,6 +39,24 @@ aws resources running a specifc application version.
 **Deploying an application using elastic beanstalk**
 
 
+1. Navigate to elastic beanstalk
+2. Create an application
+3. Create an environment
+
+**config**
+
+1. tier: web server
+2. java 17
+3. presets: single instance
+4. create a role for eb
+5. select a key pair (create one if not available)
+6. create a role for ec2 with permissions `AWSElasticBeanstalkMulticontainerDocker`, `AWSElasticBeanstalkWebTier`, `AWSElasticBeanstalkWorkerTier`
+7. skip steps
+8. select t2.micro
+9. add an env varible `SERVER_PORT=5000`
+10. create
+
+
 
 ### Deployment & Deployment modes
 
