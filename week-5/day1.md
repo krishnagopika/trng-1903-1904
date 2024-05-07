@@ -1,8 +1,6 @@
 # Lecture Plan
 
 1. Elastic Beanstalk
-
-
 ---
 
 ### Introduction
@@ -18,7 +16,6 @@
 
 
 **Environment**
-
 
 aws resources running a specifc application version. 
    - Tiers: Web Server and Worker
@@ -57,6 +54,23 @@ aws resources running a specifc application version.
 10. create
 
 
+### Elastic Beanstalk CLI
+
+[eb cli](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html)
+
+
+1. clone 
+
+```
+git clone https://github.com/aws/aws-elastic-beanstalk-cli-setup
+```
+
+2. install eb cli
+
+```
+python .\aws-elastic-beanstalk-cli-setup\scripts\ebcli_installer.py
+```
+
 
 ### Deployment & Deployment modes
 
@@ -90,11 +104,10 @@ aws resources running a specifc application version.
    - temp ASG health is monitored.
    - no downtime
    - option to rollback
-   - zero downtime. 
+   - zero downtime.
 
-### Elastic Beanstalk CLI
+[elastic beanstalk deployments](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.deploy-existing-version.html)
 
-[eb cli](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html)
 
 
 ### Lifecycle policy
@@ -126,6 +139,6 @@ aws resources running a specifc application version.
 - For RDS, creating a new RDS with the backup snapshot is the right approach for database migration.
 - Route53 or CNAME swap is used to swap the env along with a deployment startergy after testing the new env.
 
-Activities:
+**Activities:**
 
 1. Deploy a springboot app  using eb console or cli.
