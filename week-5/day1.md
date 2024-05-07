@@ -92,25 +92,36 @@ python .\aws-elastic-beanstalk-cli-setup\scripts\ebcli_installer.py
    - has downtime
    - no additional cost
 
-
+![all at once](./images/all-at-once.png)
 
 2. Rolling
    - applications are updated based on the bucket size.
    - no additional cost
+![rolling](./images/rolling.png)
+
 
 3. Rolling with additional batches
    -  a bucket size is specified to roll out the updates.
    -  runs in full capacity
    -  additional cost based on the bucket size.
-  
+
+![rolling with bacthes](./images/rolling-bacthes.png)
+
+
 4. Immutable
 
    - New code is deployed in new ASG
    - High cost
    - quick rollback 
+
+![immutable](./images/immutable.png)
+
 5. Blue Green
    - new enviorment with new deployment. Route53 to redirect the traffic.
    - not a feature in Elastic Beanstack
+
+![blue green](./images/Blue-Green.png)
+
 6. Traffic Splitting (canary)
 
    - temp ASG with same capacity.
@@ -119,6 +130,9 @@ python .\aws-elastic-beanstalk-cli-setup\scripts\ebcli_installer.py
    - no downtime
    - option to rollback
    - zero downtime.
+  
+![traffic splitting](./images/traffic-splliting.png)
+
 
 [elastic beanstalk deployments](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.deploy-existing-version.html)
 
@@ -152,6 +166,9 @@ python .\aws-elastic-beanstalk-cli-setup\scripts\ebcli_installer.py
 - To migrate an ELB a new enviorment with new ELB configuration should be created.
 - For RDS, creating a new RDS with the backup snapshot is the right approach for database migration.
 - Route53 or CNAME swap is used to swap the env along with a deployment startergy after testing the new env.
+
+
+**[EB pricing](https://aws.amazon.com/elasticbeanstalk/pricing/)**
 
 **Activities:**
 
