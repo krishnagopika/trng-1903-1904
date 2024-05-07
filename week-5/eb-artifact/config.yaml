@@ -1,0 +1,27 @@
+branch-defaults:
+  default:
+    environment: Revhire-test
+environment-defaults:
+  Revhire-test:
+    branch: null
+    repository: null
+    instance_type: t2.micro
+global:
+  application_name: revhire
+  default_ec2_keyname: trng-1903
+  default_platform: Corretto 17 running on 64bit Amazon Linux 2023
+  default_region: us-east-1
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: eb-cli
+  sc: null
+  workspace_type: Application
+
+option_settings:
+  aws:elasticbeanstalk:application:environment:
+    SERVER_PORT: 5000
+
+deploy:
+  artifact: target/revhire-0.0.1-SNAPSHOT.jar
