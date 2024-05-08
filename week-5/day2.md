@@ -162,4 +162,9 @@ ex: instance type
 - enable the logs
 
 
+**pricing**
+
+[ECS](https://aws.amazon.com/ecs/pricing/)
+[ECR](https://aws.amazon.com/ecr/pricing/)
+
 
