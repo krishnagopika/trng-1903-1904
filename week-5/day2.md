@@ -65,6 +65,24 @@ Elastic Container Service. used to launch docker containers. ECS tasks are launc
 - image vulerability, scanning and tagging.
 
 
+1. create a repository in AWS ECR
+2. Execute the push commands in poweshell or linux terminal
+3. Optional steps if login is denied
+
+```
+Set-ExecutionPolicy RemoteSigned
+Install-Module -Name AWS.Tools.ECR
+Initialize-AWSDefaults -Region us-east-1
+```
+
+
+<i><b>Note:</b>
+aws cli should be configured before pushing the image to ecr
+</i>
+
+
+
+
 #### Cluster
 
 group of container instances. Tasks can be placed on the containers.
