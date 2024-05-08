@@ -48,6 +48,9 @@ Elastic Container Service. used to launch docker containers. ECS tasks are launc
 - each task has a specific role. different roles are uded to access different ECS services.
 
 
+![Instance Profile](./images/ecs-instance-profiler.png)
+
+
 #### Data Volumes
 
 - EFS file system
@@ -133,7 +136,7 @@ ex: instance type
 
 - container: image name, port and imagename-port-tcp
 
-1. Service Creation
+3. Service Creation
 
 - select launch type : ec2
 - select task
