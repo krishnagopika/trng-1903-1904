@@ -73,6 +73,18 @@ s3 url for public private: `https://s3.us-west-2.amazonaws.com/amazon-eks/cloudf
 aws eks --region us-east-1 update-kubeconfig --name cluster-name
 ```
 
+to list all
+
+```
+kubectl config get-contexts
+```
+
+to use a specific cluster config
+
+```
+kubectl config use-context <context-name>
+```
+
 4. IAM User Access
 
 - Cluster --> Access --> Create Access entry --> select the user --> Permission (ClusterAdmin)
