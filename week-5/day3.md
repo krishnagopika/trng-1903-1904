@@ -20,12 +20,12 @@ aws eks --region us-east-1 update-kubeconfig --name cluster-name
 
 In an EKS cluster, nodes are the underlying EC2 instances responsible for running your containerized applications. These nodes can have different roles and permissions. For example:
 
-- **Role**: EC2
+- **Role**: Service-EC2
 - **Permissions**: EC2 Worker node, CNI (Container Network Interface) for networking between containers and ECR (Elastic Container Registry) readonly access for pulling container images.
 
 ### Storage
 
-EKS supports various storage options for your Kubernetes workloads, including Amazon Elastic Block Store (EBS) volumes, Amazon Elastic File System (EFS), and third-party storage solutions.
+EKS supports various storage options for your Kubernetes workloads, Amazon Elastic File System (EFS), and third-party storage solutions.
 
 ### Networking
 
