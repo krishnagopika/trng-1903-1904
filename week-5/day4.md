@@ -7,7 +7,7 @@
 
 #### DNS
 
-**Domain Registrar:** Amamzon Route 53, GoDaddy
+**Domain Registar:** Amamzon Route 53, GoDaddy
 
 **DNS Records:** A, AAAA, CNAME, NS
 
@@ -120,13 +120,9 @@ Note: EC2 DNS is not supported.
     - can be associated with health checks
     - ex: LoadBalancing, testing application(Blue Green deployment traffic routing)
     - assign 0 to not to send any traffic.
-
-
 - Latency based:
-
     - based on the users location the resource from the nearest region is returned.
     - supports health checks.
-
 - Failover: diverts the traffic to a healthy instance.
 - Geolocation: 
   - routing based on user location. spcify the location, country and the state. 
