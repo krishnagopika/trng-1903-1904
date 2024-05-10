@@ -7,7 +7,7 @@
 
 #### DNS
 
-**Domain Registar:** Amamzon Route 53, GoDaddy
+**Domain Registrar:** Amamzon Route 53, GoDaddy
 
 **DNS Records:** A, AAAA, CNAME, NS
 
@@ -137,8 +137,8 @@ Note: EC2 DNS is not supported.
 #### 3rd party Domain
 
 
-- A domain registered in a 3rd party register can be managed using AWS Route53.
-- Configure the rules Route53 rules in the registar. 
+- A domain registered in a 3rd party registrar can be managed using AWS Route53.
+- Configure the rules Route53 rules in the registrar. 
 
 
 
