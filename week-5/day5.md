@@ -100,14 +100,17 @@ ex: Cross account access and publishing s3 event notifications to sqs queue
 - Encryption inflight using HTTPS API
 - At rest encryption using KMS
 - cliend side encryption
-- IAM access contol for SQS API
+- IAM access contol for SNS API
 
 
 #### SNS & SQS Fanout Pattern
 
-- push to SNS and all SQS queues are subscribed to SNS Queue.
+- push to SNS and all SQS queues are subscribed to SNS topic.
 - decoupled and no data loss
 - Cross region delivery
 
+
+[SQS pricing](https://aws.amazon.com/sqs/pricing/)
+[SNS Pricing](https://aws.amazon.com/sns/pricing/)
 
 
