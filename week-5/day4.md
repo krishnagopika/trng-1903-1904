@@ -71,7 +71,7 @@
 - caching reducs the traffic to Route53.
 - TTL is mandatory for all records except for the Alias records
 
-#### CNAME vs Alias
+#### CNAME (canonical name) vs Alias
 
 - Map hostname to a domain
 
