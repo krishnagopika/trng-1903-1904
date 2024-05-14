@@ -102,6 +102,9 @@ aws kms decrypt --ciphertext-blob fileb://EncryptedFileBinary --output text --qu
 cat DecryptedSecret.base64 | base64 --decode > DecryptedSecretText
 ```
 
+
+[AWS SDK for KMS Encryption](https://docs.aws.amazon.com/kms/latest/developerguide/programming-encryption.html)
+
 ### Envelope Encryption (GenerateDataKey API)
 
 - over 4KB encryption
