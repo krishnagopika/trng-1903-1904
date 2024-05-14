@@ -113,3 +113,29 @@ cat DecryptedSecret.base64 | base64 --decode > DecryptedSecretText
 - KMS decryptes the encrypted DEK with Decrypt api call
 - the decryoted DEK can be used decrypt the encrypted file.
 - AWS Ecryption SDK implementes Envolupe encryption.(supports java, Python, C, JavaScript)
+
+# CloudTrail
+
+- Cloud Trail is used for governance, compliance and audit for the AWS account.
+
+#### CloudTrail Events
+
+1. Management Events
+
+- actions performed on aws account resources
+- Read and Write(Modifing the resource) events
+- logged by default
+
+2. Data Events
+
+- crud with data. ex: s3
+- by default they are not logged
+
+3. Insignt Events
+
+- enabled to detect the unusual activity
+
+ex: inaccurate resource provisioning, reaching service limits, sudden burst of IAM actiions
+- management events are analyzed to detect the anomalies. specifically the write events.
+
+Cloud trail events are retained for 90 days and to retain them beyond that they can be logged into the s3 bucket.
