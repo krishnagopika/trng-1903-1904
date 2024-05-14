@@ -93,7 +93,7 @@ cat EncryptedSecretFile.base64 | base64 --decode > EncryptedSecretBinary
 3. decrypt
 
 ```
-aws kms decrypt --ciphertext-blob fileb://EncryptedFileBinary --output text --query Plaintext > DecryptedSecret.base64 --region us-east-1
+aws kms decrypt --ciphertext-blob fileb://EncryptedSecretBinary --output text --query Plaintext > DecryptedSecret.base64 --region us-east-1
 ```
 
 4. base64 decode
