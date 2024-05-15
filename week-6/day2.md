@@ -144,15 +144,9 @@ aws lambda invoke --function-name demo-lambda --cli-binary-format raw-in-base64-
 
 **Runtime API:** an HTTP API for custom runtimes to receive invocation events from Lambda and send response data back within the Lambda execution environment.
 
-**Extentions API:**Lambda function authors use extensions to integrate Lambda with their preferred tools for monitoring, observability, security, and governance.c
+**Extentions API:** Lambda function authors use extensions to integrate Lambda with their preferred tools for monitoring, observability, security, and governance.c
 
 **Telemetry API**: Using the Lambda Telemetry API, your extensions can directly receive telemetry data from Lambda. During function initialization and invocation, Lambda automatically captures telemetry, such as logs, platform metrics, and platform traces.
-
-## SDK (Software development Kit)
-
-- AWS SDK is used to perform actions n AWS directly from application code (without using CLI).
-- Python SDK is boto 3, AWS CLI is written in boto 3.
-- If a region is not specified or configured "us-east-1" is choosen by default.
 
 
 # Function Handler (Python Handler)
@@ -177,14 +171,150 @@ A function handler can be any name; however, the default name in the Lambda cons
 
 - AWS CloudWatch is a monitoring and mangement service that collects and visualize the execution logs, metrics, and event data in automaed dashboards.
 
+
+## Lambda Layers
+
+
+path
+
+```
+python/lib/python3.11/site-packages
+```
+
+### thumbnail code
+
+
+1. Install python
+
+```
+sudo yum install -y python3.9-pip
+```
+
+2. create a venv
+
+```
+python3.9 -m venv .venv
+```
+
+3. activate the venv
+
+```
+source .venv/bin/activate
+```
+
+4. install the dependencies
+
+```
+pip install boto3 pillow
+```
+
+5. zip the contentes of venv
+
+```
+mkdir python
+cp ./venv/lib/ python
+```
+
+6. create the zip file
+
+```
+zip -r dependencies.zip python
+```
+
+7. assign a role to ec2 with s3 `PutObject` access for the bucket
+
+
+8. copy the zip file to s3
+
+```
+aws s3 cp dependencies.zip bucket-url
+```
+
+9. create a layer with python 3.9 and add the dependencies.zip object as source.
+
+10. create two buckets. one for source images and other for compresed img.
+
+
+11. create a lambda function with the the below policy attached to the lambda role
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:PutLogEvents",
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream"
+            ],
+            "Resource": "arn:aws:logs:*:*:*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject"
+            ],
+            "Resource": "arn:aws:s3:::source-s3-bucket/*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject"
+            ],
+            "Resource": "arn:aws:s3:::dest-s3-bucket/*"
+        }
+    ]
+}
+```
+
+12. add the layer to the lambda function
+
+13. lambda function code
+
+``` python
+import boto3
+import os
+import sys
+import uuid
+from urllib.parse import unquote_plus
+import PIL.Image
+
+s3_client = boto3.client('s3')
+
+def resize_image(image_path, resized_path):
+    print(image_path)
+    with PIL.Image.open(image_path) as image:
+        image.thumbnail(tuple(x // 2 for x in image.size))
+        image.save(resized_path)
+
+def lambda_handler(event, context):
+    for record in event['Records']:
+        bucket = record['s3']['bucket']['name']
+        key = unquote_plus(record['s3']['object']['key'])
+        tmpkey = key.replace('/', '')
+        download_path = f"/tmp/{uuid.uuid4()}{tmpkey}"
+        upload_path = f"/tmp/resized-{tmpkey}"
+
+        s3_client.download_file(bucket, key, download_path)
+        resize_image(download_path, upload_path)
+        bucket_target="dest-s3-bucket"
+        s3_client.upload_file(upload_path, f"{bucket_target}", f"resized-{key}")
+```
+
+
 # Lambda@Edge
 
 - customization at edge
 - Lambda@Edge is a feature of Amazon CloudFront that lets you run code closer to users of your application, which improves performance and reduces latency. With Lambda@Edge, you don't have to provision or manage infrastructure in multiple locations around the world. You pay only for the compute time you consume - there is no charge when your code is not running.
 - CloudFront : Amazon CloudFront is a content delivery network (CDN) service built for high performance, security, and developer convenience.
 
+## SDK (Software development Kit)
+
+- AWS SDK is used to perform actions n AWS directly from application code (without using CLI).
+- Python SDK is boto 3, AWS CLI is written in boto 3.
+- If a region is not specified or configured "us-east-1" is choosen by default.
 
 **Activities**
 
 1. rock-paper-scissors lambda function in python.
-2. 
