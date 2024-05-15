@@ -175,11 +175,10 @@ A function handler can be any name; however, the default name in the Lambda cons
 ## Lambda Layers
 
 
-path
-
-```
-python/lib/python3.11/site-packages
-```
+- a .zip file archive that contains supplementary code or data. 
+- layers contain library dependencies, configuration files.
+-  used to reduce the size of your deployment packages, separate core function logic from dependencies. update function dependencies independent of the function code.
+-  to share dependencies across multiple functions layers can be used.
 
 ### thumbnail code
 
@@ -213,7 +212,13 @@ pip install boto3 pillow
 ```
 mkdir python
 cp ./venv/lib/ python
+
+
+path
+
 ```
+python/lib/python3.11/site-packages
+``````
 
 6. create the zip file
 
