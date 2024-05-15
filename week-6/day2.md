@@ -309,12 +309,17 @@ def lambda_handler(event, context):
 - Lambda@Edge is a feature of Amazon CloudFront that lets you run code closer to users of your application, which improves performance and reduces latency. With Lambda@Edge, you don't have to provision or manage infrastructure in multiple locations around the world. You pay only for the compute time you consume - there is no charge when your code is not running.
 - CloudFront : Amazon CloudFront is a content delivery network (CDN) service built for high performance, security, and developer convenience.
 
+
 ## SDK (Software development Kit)
 
 - AWS SDK is used to perform actions n AWS directly from application code (without using CLI).
 - Python SDK is boto 3, AWS CLI is written in boto 3.
 - If a region is not specified or configured "us-east-1" is choosen by default.
 
+**[SAM](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html#what-is-sam-overview)**
+
 **Activities**
 
 1. rock-paper-scissors lambda function in python.
+2. img compression for images in s3 - event trigger to lambda.
+3. 
