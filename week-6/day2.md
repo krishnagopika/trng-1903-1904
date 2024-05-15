@@ -212,13 +212,13 @@ pip install boto3 pillow
 ```
 mkdir python
 cp ./venv/lib/ python
-
+```
 
 path
 
 ```
 python/lib/python3.11/site-packages
-``````
+```
 
 6. create the zip file
 
@@ -327,4 +327,3 @@ def lambda_handler(event, context):
 
 1. rock-paper-scissors lambda function in python.
 2. img compression for images in s3 - event trigger to lambda.
-3. 
