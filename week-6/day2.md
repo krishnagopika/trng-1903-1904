@@ -112,20 +112,23 @@ aws lambda invoke --function-name demo-lambda --cli-binary-format raw-in-base64-
    - AWS config
    - AWS IOT and IOT events
 
-# LINUX / MAC
+
 
 ```
+# LINUX / MAC
 aws lambda invoke --function-name demo-lambda --cli-binary-format raw-in-base64-out --payload '{"key1": "value1", "key2": "value2", "key3": "value3" }' --invocation-type Event --region us-east-1 response.json
 ```
 
-# WINDOWS POWERSHELL
+
 ```
+# WINDOWS POWERSHELL
 aws lambda invoke --function-name demo-lambda --cli-binary-format raw-in-base64-out --payload '{\"key1\": \"value1\", \"key2\": \"value2\", \"key3\": \"value3\" }' --invocation-type Event --region us-east-1 response.json
 
 ```
-# WINDOWS CMD
+
 
 ```
+# WINDOWS CMD
 aws lambda invoke --function-name demo-lambda --cli-binary-format raw-in-base64-out --payload "{""key1"":""value1"",""key2"":""value2"",""key3"":""value3""}" --invocation-type Event --region us-east-1 response.json
 
 ```
@@ -179,3 +182,9 @@ A function handler can be any name; however, the default name in the Lambda cons
 - customization at edge
 - Lambda@Edge is a feature of Amazon CloudFront that lets you run code closer to users of your application, which improves performance and reduces latency. With Lambda@Edge, you don't have to provision or manage infrastructure in multiple locations around the world. You pay only for the compute time you consume - there is no charge when your code is not running.
 - CloudFront : Amazon CloudFront is a content delivery network (CDN) service built for high performance, security, and developer convenience.
+
+
+**Activities**
+
+1. rock-paper-scissors lambda function in python.
+2. 
