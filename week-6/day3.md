@@ -27,6 +27,17 @@
 - users can can be created, verified, grouped and managed by admin.
 
 
+**Authentication flow**
+
+- verification of a users identity using password and other configurations.
+- Public Authentication
+- Client side authentication
+- Server side authntication
+
+
+**[JWT](https://jwt.io/introduction)**
+
+
 **Optional**
 
 ### Cognito Identity Pools (Federated Identities):
@@ -70,11 +81,33 @@ API Gateway in AWS provides several benefits when it comes to API management and
 
 6. API Versioning and Deployment Management: API Gateway supports versioning of APIs, allowing you to roll out changes and new features without disrupting existing clients. You can manage different versions of your APIs and control the deployment of updates through stage management.
 
-7. Monitoring and Analytics: API Gateway integrates with AWS CloudWatch, allowing you to monitor the performance and health of your APIs in real-time. You can set up custom metrics, alarms, and logs to track important API metrics, identify issues, and troubleshoot problems.
+7. Monitoring and Analytics: API Gateway integrates with AWS CloudWatch, allowing you to monitor the performance and health of your APIs in real-time. You can  set up custom metrics, alarms, and logs to track important API metrics, identify issues, and troubleshoot problems.
 
 8. Developer Portal and Documentation: API Gateway provides a developer portal where you can publish documentation, SDKs, and interactive API documentation. It allows developers to explore and understand your APIs, test endpoints, and generate client code snippets.
 
 9. Integration with AWS Services: API Gateway seamlessly integrates with other AWS services, such as AWS Lambda, AWS Step Functions, Amazon Cognito, Amazon S3, and more. This enables you to build serverless architectures, implement custom logic, and leverage existing AWS services within your APIs.
+
+
+### API Gateway - Endpoint Types
+
+1. Edge-Optimized (default): For global clients
+   - Requests are routed through the CloudFront Edge locations (improves latency)
+   - API Gateway still lives in only one region
+
+2. Regional:
+   - For clients within the same region
+   - Could manually combine with CloudFront (more control over the caching
+strategies and the distribution)
+
+
+3. Private:
+   - Can only be accessed from your VPC using an interface VPC endpoint (ENI)
+   - Use a resource policy to define access
+
+
+
+**optional**
+
 
 ### Json rewriting
 
@@ -91,6 +124,51 @@ Few common scenarios where JSON rewriting in API gateways is useful:
 4. **Data Validation**: API gateways can enforce data validation rules by examining JSON payloads. They can reject or modify requests that don't adhere to predefined validation criteria, such as data types, field constraints, or mandatory fields.
 
 5. **Security Enhancements**: JSON rewriting can be used to add security-related elements to JSON payloads. This includes injecting authentication or authorization tokens, encrypting or decrypting sensitive data, or adding digital signatures for integrity and authenticity.
+
+
+Steps to integrate API gateway with lambda
+
+
+1. Create a REST API gateway
+2. Create a post method with resource as lambda
+lambda code:
+
+```python
+import json
+
+def lambda_handler(event, context):
+    name = event['name']
+    # TODO implement
+    return {
+        'statusCode': 200,
+        'body': json.dumps(f'hey {name}!'.format(name))
+    }
+
+```
+
+3. Create a model
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title" : "Demo Schema",
+  "type" : "object",
+  "properties":{
+      "name":{
+          "type":"string"
+      }
+  },
+  "required":["name"]
+}
+```
+4. edit the method and configure the request body model.
+
+5. Create Authorization. configure the cognito user pool with Authroization key. enable validation for request header. 
+
+6. edit the method and configure the authorizer
+
+7. Create a deployment with a new stage (dev, test, prod)
+7. Login to cognito app client and pass the id_token while invoking the api gateway with deployment url.
 
 
 
