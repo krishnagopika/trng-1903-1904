@@ -307,7 +307,8 @@ def lambda_handler(event, context):
         s3_client.upload_file(upload_path, f"{bucket_target}", f"resized-{key}")
 ```
 
-
+14. add a trigger in s3 bucket and configire it to the lambda function.
+15. upload the image objects in source bucket. the compressed images will be stored in destination bucket.
 # Lambda@Edge
 
 - customization at edge
