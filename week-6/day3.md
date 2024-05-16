@@ -168,7 +168,7 @@ def lambda_handler(event, context):
 6. edit the method and configure the authorizer
 
 7. Create a deployment with a new stage (dev, test, prod)
-7. Login to cognito app client and pass the id_token while invoking the api gateway with deployment url.
+8. Login to cognito app client and pass the id_token while invoking the api gateway with deployment url.
 
 
 
