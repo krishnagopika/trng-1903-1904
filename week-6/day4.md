@@ -3,8 +3,6 @@
 
 1. DynamoDB
 2. CloudWatch
-3. X-Ray
-
 ---
 
 # Dynamo DB
@@ -178,11 +176,6 @@ are impacted
 - Integration with CloudWatch Alarms
 - Scripts written in Node.js or Python
 - Can run once or on a regular schedule
-
-
-
-# X-Ray
-
 
 
 

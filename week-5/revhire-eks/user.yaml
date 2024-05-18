@@ -31,5 +31,26 @@ spec:
     - protocol: 'TCP'
       port: 8082
       targetPort: 8082
-  type: LoadBalancer
+  type: NodePort
 
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: revhire-user-ingress
+  annotations:
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/scheme: internet-facing
+spec:
+  ingressClassName: alb
+  rules:
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: revhire-user-service
+                port:
+                  number: 80

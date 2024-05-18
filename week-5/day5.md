@@ -112,5 +112,3 @@ ex: Cross account access and publishing s3 event notifications to sqs queue
 
 [SQS pricing](https://aws.amazon.com/sqs/pricing/)
 [SNS Pricing](https://aws.amazon.com/sns/pricing/)
-
-
