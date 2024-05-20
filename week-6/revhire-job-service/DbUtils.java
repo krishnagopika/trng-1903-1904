@@ -4,9 +4,9 @@ import java.util.Arrays;
 import java.util.List;
 
 public class DbUtils {
-    private static final String URL = "jdbc:mysql://revhire-db.cnlwgkdvldnm.us-east-1.rds.amazonaws.com:3306/revhire";
-    private static final String USERNAME = "revhire";
-    private static final String PASSWORD = "revhire4444";
+    private static final String URL = "jdbc:h2:mem:test;DB_CLOSE_DELAY=-1.;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;INIT=runscript from 'classpath:schema.sql'";
+    private static final String USERNAME = "sa";
+    private static final String PASSWORD = "";
 
     private static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(URL, USERNAME, PASSWORD);
