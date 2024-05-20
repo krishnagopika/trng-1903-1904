@@ -178,4 +178,12 @@ are impacted
 - Can run once or on a regular schedule
 
 
+**Activities**
+
+1. Creating DynamoDB table and CRUD using boto3
+2. EventBridge Scheduler trigger to a lambda Function
+3. Cloud watch Alarm for EC2 CPU utilization to SNS configured to an Email Service
+
+
+
 

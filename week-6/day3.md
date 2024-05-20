@@ -130,7 +130,7 @@ Steps to integrate API gateway with lambda
 
 
 1. Create a REST API gateway
-2. Create a post method with resource as lambda
+2. Create a post method for default resource `/` and integrate with lambda
 lambda code:
 
 ```python
@@ -171,6 +171,7 @@ def lambda_handler(event, context):
 8. Login to cognito app client and pass the id_token while invoking the api gateway with deployment url.
 
 
+**Activities:**
 
-
-
+1. Creating an App client with hosted UI (Cognito User Pool)
+2. API gateway- REST API with Lambda and Cognito Authorization

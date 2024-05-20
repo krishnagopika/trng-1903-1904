@@ -201,6 +201,11 @@ aws iam create-service-specific-credential --user-name name --service-name codec
 - A file named appspec.yml defines how the deployment happens
 
 
+**Activities**
+
+
+1. CodePipleine for deploying an MSa application in EKS.
+
 
 
 
