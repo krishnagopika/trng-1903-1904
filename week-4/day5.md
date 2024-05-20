@@ -235,7 +235,7 @@ Create a LoadBalancer
 
 - Layer 4
 - Forward UDP and TCP traffic to insatnces
-- andle millions of requests with low latency (100ms). for ALB its 400 ms
+- handle millions of requests with low latency (100ms). for ALB its 400 ms
 - static ip per AZ and supports elastic ip
 - used for high performce TCP and UDP traffic.
 - Not included in free tier

@@ -191,4 +191,3 @@ Creating the buckt policy
 
 1. Implement the Lazy loading and Write through caching stratergies using the ElastiCache and RDS.
 2. Create S3 bucket and deploy a frontend application by enabling static web hosting and create custom bucket policies.
-
