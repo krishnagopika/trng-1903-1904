@@ -160,6 +160,21 @@ data "aws_ami" "ubuntu" {
 ### workspaces
 
 
+- used to manage multiple deplpyments with same resourse configuration.
+
+commands
+
+`terraform workspace`
+
+Subcommands:
+    delete    Delete a workspace
+    list      List Workspaces
+    select    Select a workspace
+    show      Show the name of the current workspace
+
+
+
+
 ### null resource & provisionr
 
 
@@ -175,6 +190,10 @@ resource "null_resource" "example" {
 **provisioner**: type of provisioner to execute commands. ex: local, remote
 
 
-### tainting & updating resources & replace
+### tainting & updating resources/ replace
 
 
+- used to relace the resource with the desired config
+```
+terraform apply -replace"resource.name"
+```
