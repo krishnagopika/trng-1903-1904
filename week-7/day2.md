@@ -159,6 +159,22 @@ data "aws_ami" "ubuntu" {
 
 ### workspaces
 
-### null resource & local execution
+
+### null resource & provisionr
+
+
+- to perfom actions on a physical resource without actually provisioning the actual resource
+
+```
+resource "null_resource" "example" {
+  provisioner "name" {
+    command = ""
+  }
+}
+```
+**provisioner**: type of provisioner to execute commands. ex: local, remote
+
 
 ### tainting & updating resources & replace
+
+

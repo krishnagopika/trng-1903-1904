@@ -7,8 +7,12 @@
 # }
 
 # resource "aws_s3_bucket" "trng-1903-s3-buckets" {
-#     for_each = var.s3_bucket_names
-#     bucket = each.value
+#     count = 3
+#     bucket = "%{ if var.s3_bucket_names!="" }${var.s3_bucket_names}-${count.index}%{else}${var.default_buckt_name}%{ endif }"
+
+#     tags = {
+#       name = "${var.s3_bucket_names}-${count.index}"
+#     }
   
 # }
 
@@ -32,4 +36,16 @@ resource "aws_instance" "demo" {
     }
   
 }
+
+
+# resource "aws_instance" "demo" {
+#     ami = lookup(var.ami_ids_al2, var.region)
+#     instance_type = "t2.micro"
+
+#     tags = {
+#       Name = "demo-trng-1903-1904-1"
+#       Env = "dev"
+#     }
+  
+# }
 
