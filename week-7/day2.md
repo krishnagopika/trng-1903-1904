@@ -86,11 +86,10 @@ variable "image_id" {
 4. Any *.auto.tfvars or *.auto.tfvars.json files, processed in lexical order of their filenames.
 5. Any -var and -var-file options on the command line, in the order they are provided. (This includes variables set by an HCP Terraform workspace.)
 
-### function
+### builin function
 
-1. count
-2. lookup
-3. file
+   1. lookup
+   2. count
 
 ### Templates
 
@@ -106,12 +105,26 @@ variable "image_id" {
 
 - a sequence is a directive. 
 
-" %{ if id var.name != "" }
+" %{ if id var.name != "" } "
 
 ### Conditionals
 
 ```
 condition ? true_val : false_val
+```
+
+### for each
+
+
+```
+resource "azurerm_resource_group" "rg" {
+  for_each = tomap({
+    a_group       = "eastus"
+    another_group = "westus2"
+  })
+  name     = each.key
+  location = each.value
+}
 ```
 
 ### Data Sources
@@ -142,20 +155,7 @@ data "aws_ami" "ubuntu" {
 }
 ```
 
-```
-resource "azurerm_resource_group" "rg" {
-  for_each = tomap({
-    a_group       = "eastus"
-    another_group = "westus2"
-  })
-  name     = each.key
-  location = each.value
-}
-```
-
 ### modules
-
-- 
 
 ### workspaces
 

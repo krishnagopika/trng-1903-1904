@@ -40,9 +40,11 @@ ex: `aws_s3_bucket`, `azurerm_resource_group`
 
 ### Outputs
 
-
-### main.tf
-
+```
+output "my_output" {
+  value = resource.name.value
+}
+```
 
 ### Basic TF commands
 
