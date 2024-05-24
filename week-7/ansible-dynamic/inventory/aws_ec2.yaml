@@ -3,7 +3,6 @@ regions:
   - us-east-1
 filters:
   instance-state-name: running
-  tag:ansible : yes
 hostnames:
   - tag:Name
 compose:
