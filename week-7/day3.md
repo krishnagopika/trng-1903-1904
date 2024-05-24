@@ -75,6 +75,9 @@ tags:
 **dynamic inventory:** dynamic hosts (vms or local servers) 
 
 
+**[best practices](https://docs.ansible.com/ansible/2.8/user_guide/playbooks_best_practices.html#best-practices)**
+
+
 
 
 
