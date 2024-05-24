@@ -2,3 +2,15 @@
   file:
     path: /home/ec2-user/trng-1903
     state: directory
+- name : installs packages
+  become: yes
+  yum:
+    name:
+    - python3.9
+- name: install apache
+  become: yes
+  yum:
+    name:
+    - apache2
+    state: present
+    update_cache: yes
