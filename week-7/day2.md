@@ -91,7 +91,7 @@ variable "image_id" {
    1. lookup
    2. count
 
-### Templates
+### String Templates
 
 #### Interpolation
 
