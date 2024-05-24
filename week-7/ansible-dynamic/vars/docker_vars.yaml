@@ -1,0 +1,3 @@
+docker_image: "krishnagopika4/trng-1903:6.0.0"
+container_name: "demo"
+container_port: 80

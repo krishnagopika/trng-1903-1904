@@ -31,5 +31,13 @@
 - play: name, host, task
 - roles: used to group and reuse tasks
 - collections are available in ansible galaxy
+- handler: 
+
+
+### variables
+
+
+
+
 
 
