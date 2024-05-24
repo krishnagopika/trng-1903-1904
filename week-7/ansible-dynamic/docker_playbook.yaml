@@ -1,6 +1,24 @@
 - name: Manage Docker containers
-  hosts: all
-  user: ubuntus
+  hosts: ansible
+  remote_user: ec2-user
+  vars:
+    ansible_ssh_private_key_file: inventory/ansible-ec2.pem
+  gather_facts: no
+  vars_files:
+    - vars/docker_vars.yaml
+  tasks:
+    - name: Ensure Docker is installed
+      ansible.builtin.package:
+        name: docker
+        state: present
+      become: yes
+
+    - name: Start Docker service
+      ansible.builtin.service:
+        name: docker
+        state: started
+        enabled: yes
+      become: yes
   gather_facts: no
   vars_files:
     - vars/docker_vars.yml

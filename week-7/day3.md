@@ -75,9 +75,6 @@ tags:
 **dynamic inventory:** dynamic hosts (vms or local servers) 
 
 
-**collections:** ansible bundeled code 
-
-
 
 
 
