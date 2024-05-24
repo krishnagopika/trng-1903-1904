@@ -1,5 +1,6 @@
 - name: Manage Docker containers
-  hosts: tag_Name_docker-host
+  hosts: all
+  user: ubuntus
   gather_facts: no
   vars_files:
     - vars/docker_vars.yml

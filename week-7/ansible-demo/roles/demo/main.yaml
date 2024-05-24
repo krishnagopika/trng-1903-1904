@@ -1,4 +1,4 @@
 - name: Creates directory
   file:
-    path: ./demo
+    path: /home/ec2-user/trng-1903
     state: directory
