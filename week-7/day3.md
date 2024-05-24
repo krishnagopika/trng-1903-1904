@@ -78,11 +78,27 @@ tags:
 **[best practices](https://docs.ansible.com/ansible/2.8/user_guide/playbooks_best_practices.html#best-practices)**
 
 
+**execution:**
 
+1. to fetch hosts
 
+```
+ansible-inventory -i /path/to/inventory --list
+```
 
+2. to execute playbooks
 
+```
+ansible-playbook -i /path/to/inventory /path/to/playbook
+```
 
+3. ansible-galaxy installation for collections
+
+[ansible-galaxy](https://galaxy.ansible.com/ui/search/)
+
+```
+ansible-galaxy collection install name
+```
 
 
 
