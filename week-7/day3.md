@@ -103,7 +103,7 @@ ansible-galaxy collection install name
 
 
 
-### Ansible cocepts
+### Ansible concepts from offcial docs
 
 
 **Control node**
@@ -149,8 +149,6 @@ You can invoke a single module with a task, or invoke several different modules 
 
 **Plugins**
 Pieces of code that expand Ansible’s core capabilities. Plugins can control how you connect to a managed node (connection plugins), manipulate data (filter plugins) and even control what is displayed in the console (callback plugins).
-
-See Working with plugins for details.
 
 **Collections**
 A format in which Ansible content is distributed that can contain playbooks, roles, modules, and plugins. You can install and use collections through Ansible Galaxy.
