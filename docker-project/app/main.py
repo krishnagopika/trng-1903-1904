@@ -102,3 +102,15 @@ def metrics():
     for k,v in graphs.items():
         result.append(prometheus_client.generate_latest(v).decode('utf-8'))
     return Response(''.join(result), headers=header)
+
+
+<<<<<<<<<<<<<<  ✨ Codeium Command 🌟 >>>>>>>>>>>>>>>>
++def is_prime(n):
++    if n <= 1:
++        return False
++    for i in range(2, int(n**0.5) + 1):
++        if n % i == 0:
++            return False
++    return True
+-def print_prime():
+<<<<<<<  5f069eec-9c51-42a0-bf6f-69fbdf4eee88  >>>>>>>
