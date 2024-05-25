@@ -36,12 +36,13 @@
 
 **modules**: small programs that perform actions on hosts
 
-    - task
-    - play
-    - playbook
-    - role
-    - collections
+**other components:**
 
+- task
+- play
+- playbook
+- role
+- collections
 
 ### variables
 
