@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: revhire-job
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: revhire-job
+  template:
+    metadata:
+      labels:
+        app : revhire-job
+    spec:
+      containers:
+        - name: revhire-job
+          image: krishnagopika4/revhire-job-service:latest

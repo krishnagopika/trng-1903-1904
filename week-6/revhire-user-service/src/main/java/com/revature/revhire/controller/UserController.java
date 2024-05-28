@@ -1,6 +1,5 @@
 package com.revature.revhire.controller;
 
-import org.apache.logging.log4j.Logger;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -18,8 +17,10 @@ import org.springframework.web.client.HttpClientErrorException;
 import com.revature.revhire.service.UserService;
 
 import lombok.AllArgsConstructor;
-import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 
+import org.slf4j.Logger;
+import 
 import com.revature.revhire.dto.LoginCredentials;
 import com.revature.revhire.dto.UserRequest;
 import com.revature.revhire.dto.UserResponse;
@@ -27,11 +28,15 @@ import com.revature.revhire.dto.UserResponse;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/")
-@Log4j2
+@Slf4j
 @CrossOrigin(origins = "*")
 public class UserController {
+	
+	
 
 	private final UserService userService;
+	
+	private static final log = LoggerFactory.getLogger(UserController.class);
 
 	@PostMapping(path = "signup")
 	@ResponseStatus(code = HttpStatus.CREATED)

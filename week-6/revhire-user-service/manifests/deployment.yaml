@@ -16,6 +16,16 @@ spec:
       containers:
         - name: revhire-user
           image: public.ecr.aws/a6p3b4m6/revhire-user-service:latest
+          env:
+          - name : DB_URL
+            value: revhire-db.cnlwgkdvldnm.us-east-1.rds.amazonaws.com
+          - name : DB_USERNAME
+            value: revhire
+          - name : DB_PASSWORD
+            value: revhire4444
+          - name: DB_PORT
+            value: "3306"
+        
           
 ---
 apiVersion: v1

@@ -4,3 +4,4 @@ git-push.sh
 .obsidian
 .terraform
 terraform.tfstate.backup
+/.metadata/
