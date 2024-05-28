@@ -2,6 +2,8 @@ package com.revature.revhire.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -22,15 +24,18 @@ import com.revature.revhire.service.JobService;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 
 @RestController()
 @RequestMapping("/")
 @AllArgsConstructor
-@Log4j2
+@Slf4j
 @CrossOrigin(origins = "*")
 public class JobController {
 	
 	private final JobService jobService;
+	private static final Logger log = LoggerFactory.getLogger(JobController.class);
+
 	
 	@PostMapping(path = "job/create")
 	@ResponseStatus(code = HttpStatus.CREATED)
@@ -41,7 +46,7 @@ public class JobController {
 			return jobService.createJob(jobRequest);
 
 		} catch (Exception e) {
-			log.error(e);
+			log.error(e.getMessage());
 
 			throw new HttpClientErrorException(HttpStatusCode.valueOf(500), "Unable to create the job");
 		}
@@ -54,7 +59,7 @@ public class JobController {
 			return jobService.updateJob(jobRequest, id);
 		}
 	 catch (Exception e) {
-		 log.error(e);
+		 log.error(e.getMessage());
 		throw new HttpClientErrorException(HttpStatusCode.valueOf(500), "Unable to update the Job");
 		 
 	}
@@ -68,7 +73,7 @@ public class JobController {
 			return jobService.getJob(id);
 		}
 	 catch (Exception e) {
-		 log.error(e);
+		 log.error(e.getMessage());
 		throw new HttpClientErrorException(HttpStatusCode.valueOf(500), "Unable to get job information");
 		 
 	}
@@ -81,7 +86,7 @@ public class JobController {
 			return jobService.getAllJobs();
 		}
 	 catch (Exception e) {
-		 log.error(e);
+		 log.error(e.getMessage());
 		throw new HttpClientErrorException(HttpStatusCode.valueOf(500), "Unable to get jobs information");
 		 
 	}
@@ -95,7 +100,7 @@ public class JobController {
 			return jobService.getAllJobsByUserId(userId);
 		}
 	 catch (Exception e) {
-		 log.error(e);
+		 log.error(e.getMessage());
 		throw new HttpClientErrorException(HttpStatusCode.valueOf(500), "Unable to get jobs information");
 		 
 	}
@@ -118,7 +123,7 @@ public class JobController {
 			}
 		}
 	 catch (Exception e) {
-		 log.error(e);
+		 log.error(e.getMessage());
 		throw new HttpClientErrorException(HttpStatusCode.valueOf(401), "Unable to delete Job");
 		 
 	}

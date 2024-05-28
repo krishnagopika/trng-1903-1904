@@ -2,6 +2,8 @@ package com.revature.revhire.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -21,14 +23,17 @@ import com.revature.revhire.service.ApplicationService;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @AllArgsConstructor
-@Log4j2
+@Slf4j
 @RequestMapping("/")
 @CrossOrigin(origins = "*")
 public class ApplicationController {
-private final ApplicationService applicationService;
+	private final ApplicationService applicationService;
+	private static final Logger log = LoggerFactory.getLogger(ApplicationController.class);
+
 	
 	@PostMapping(path = "application/create")
 	@ResponseStatus(code = HttpStatus.CREATED)
@@ -39,7 +44,7 @@ private final ApplicationService applicationService;
 			return applicationService.createApplication(applicationRequest);
 
 		} catch (Exception e) {
-			log.error(e);
+			log.error(e.getMessage());
 
 			throw new HttpClientErrorException(HttpStatusCode.valueOf(500), "Unable to create the application");
 		}
@@ -53,7 +58,7 @@ private final ApplicationService applicationService;
 			return applicationService.getApplication(id);
 		}
 	 catch (Exception e) {
-		 log.error(e);
+		 log.error(e.getMessage());
 		throw new HttpClientErrorException(HttpStatusCode.valueOf(500), "Unable to get application information");
 		 
 	}
@@ -66,7 +71,7 @@ private final ApplicationService applicationService;
 			return applicationService.getAllapplicationsByJobId(jobId);
 		}
 	 catch (Exception e) {
-		 log.error(e);
+		 log.error(e.getMessage());
 		throw new HttpClientErrorException(HttpStatusCode.valueOf(500), "Unable to get applications");
 		 
 	}
@@ -80,7 +85,7 @@ private final ApplicationService applicationService;
 			return applicationService.getAllapplicationsByUserId(userId);
 		}
 	 catch (Exception e) {
-		 log.error(e);
+		 log.error(e.getMessage());
 		throw new HttpClientErrorException(HttpStatusCode.valueOf(500), "Unable to get applications");
 		 
 	}
@@ -103,7 +108,7 @@ private final ApplicationService applicationService;
 			}
 		}
 	 catch (Exception e) {
-		 log.error(e);
+		 log.error(e.getMessage());
 		throw new HttpClientErrorException(HttpStatusCode.valueOf(401), "Unable to delete application");
 		 
 	}
