@@ -152,9 +152,3 @@ Pieces of code that expand Ansible’s core capabilities. Plugins can control ho
 
 **Collections**
 A format in which Ansible content is distributed that can contain playbooks, roles, modules, and plugins. You can install and use collections through Ansible Galaxy.
-
-
-
-
-
-
