@@ -8,12 +8,11 @@ helm search repo ingress-nginx --versions
 
 helm install ingress-nginx ingress-nginx --repo https://kubernetes.github.io/ingress-nginx --version 4.10.1 --namespace ingress-controller
 
-
 kubectl port-forward -n ingress-controller svc/ingress-nginx-controller 443
 ```
 
 
-ingress runs in two poets 80 and 443
+ingress runs in two ports 80 and 443
 
 creates a fake certificate which is served for default https traffic on port 443
 
@@ -28,8 +27,6 @@ with NLB
 
 
 Ingress Class
-
-Secrets
 
 
 

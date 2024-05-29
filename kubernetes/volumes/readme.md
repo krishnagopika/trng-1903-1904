@@ -1,3 +1,0 @@
-# EFS volume with EKS
-
-
