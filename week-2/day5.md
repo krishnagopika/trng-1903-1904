@@ -112,7 +112,6 @@ kubectl delete namespace <namespace>
 
 
 - control the traffic at the IP address kevel or port level.
-
 - container to conatiner communications in a pod is done using `localhost`
 - external communication is estblished using service
 - pod to pod communications are controlled using Networkpolicies 
